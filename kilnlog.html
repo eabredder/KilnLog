@@ -3131,6 +3131,3086 @@
                 font-size: 0.85rem;
             }
 
+
+            #drop-zone {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: calc(100vh - 56px);
+                color: #555;
+                gap: 10px;
+            }
+            #drop-zone.drag-over {
+                color: #2a6df4;
+                border: 2px dashed #2a6df4;
+            }
+            #drop-zone svg {
+                opacity: 0.4;
+            }
+            #drop-zone p {
+                font-size: 1rem;
+            }
+            #drop-zone small {
+                font-size: 0.8rem;
+            }
+
+            #content {
+                display: none;
+                padding: 20px 24px;
+            }
+
+            /* Summary cards */
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 12px;
+                margin-bottom: 24px;
+            }
+
+            .card {
+                background: #242424;
+                border: 1px solid #333;
+                border-radius: 8px;
+                padding: 14px 16px;
+            }
+            .card-label {
+                font-size: 0.72rem;
+                color: #888;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: 6px;
+            }
+            .card-value {
+                font-size: 1.5rem;
+                font-weight: 600;
+                line-height: 1;
+            }
+            .card-unit {
+                font-size: 0.75rem;
+                color: #888;
+                margin-left: 2px;
+            }
+            .card-sub {
+                font-size: 0.78rem;
+                color: #666;
+                margin-top: 4px;
+            }
+
+            .card.emc {
+                border-color: #f0a030;
+            }
+            .card.temp {
+                border-color: #30b0f0;
+            }
+            .card.bat {
+                border-color: #50d080;
+            }
+            .card.fans {
+                border-color: #a060f0;
+            }
+            .card.hum {
+                border-color: #60d0b0;
+            }
+
+            /* Fan dots */
+            .fan-dots {
+                display: flex;
+                gap: 5px;
+                margin-top: 6px;
+            }
+            .fan-dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #333;
+            }
+            .fan-dot.on {
+                background: #a060f0;
+            }
+
+            /* Charts */
+            .charts {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+                margin-bottom: 24px;
+            }
+            @media (max-width: 900px) {
+                .charts {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .chart-card {
+                background: #242424;
+                border: 1px solid #333;
+                border-radius: 8px;
+                padding: 16px;
+            }
+            .chart-card h3 {
+                font-size: 0.82rem;
+                color: #aaa;
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+            }
+            .chart-note {
+                font-size: 0.75rem;
+                color: #666;
+                margin-bottom: 12px;
+                font-style: italic;
+            }
+            .chart-card.wide {
+                grid-column: 1 / -1;
+            }
+
+            /* Table */
+            .table-card {
+                background: #242424;
+                border: 1px solid #333;
+                border-radius: 8px;
+                padding: 16px;
+                margin-bottom: 24px;
+            }
+            .table-card h3 {
+                font-size: 0.82rem;
+                color: #aaa;
+                margin-bottom: 12px;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+            }
+
+            .table-wrap {
+                overflow-x: auto;
+                max-height: 300px;
+                overflow-y: auto;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.78rem;
+                white-space: nowrap;
+            }
+            th {
+                background: #1a1a1a;
+                color: #888;
+                font-weight: 500;
+                padding: 6px 10px;
+                text-align: right;
+                position: sticky;
+                top: 0;
+            }
+            th:first-child {
+                text-align: left;
+            }
+            td {
+                padding: 5px 10px;
+                border-bottom: 1px solid #2a2a2a;
+                text-align: right;
+            }
+            td:first-child {
+                text-align: left;
+                color: #aaa;
+            }
+            tr:hover td {
+                background: #2c2c2c;
+            }
+
+            /* Readings card — clickable */
+            .card.clickable {
+                cursor: pointer;
+            }
+            .card.clickable:hover {
+                border-color: #555;
+                background: #2c2c2c;
+            }
+            .card-hint {
+                font-size: 0.7rem;
+                color: #555;
+                margin-top: 6px;
+            }
+            .card.filtered {
+                border-color: #2a6df4;
+            }
+            .card.filtered .card-label {
+                color: #2a6df4;
+            }
+
+            /* Date range modal */
+            #modal-overlay {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.6);
+                z-index: 100;
+                align-items: center;
+                justify-content: center;
+            }
+            #modal-overlay.open {
+                display: flex;
+            }
+            #modal {
+                background: #242424;
+                border: 1px solid #444;
+                border-radius: 10px;
+                padding: 24px;
+                width: 320px;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+            #modal h2 {
+                font-size: 0.95rem;
+                font-weight: 600;
+            }
+            .modal-row {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+            .modal-row label {
+                font-size: 0.78rem;
+                color: #888;
+            }
+            .modal-row input[type="datetime-local"] {
+                background: #1a1a1a;
+                border: 1px solid #444;
+                border-radius: 6px;
+                color: #e0e0e0;
+                padding: 7px 10px;
+                font-size: 0.88rem;
+                width: 100%;
+                color-scheme: dark;
+            }
+            .modal-row input[type="datetime-local"]:focus {
+                outline: none;
+                border-color: #2a6df4;
+            }
+            #modal-range-hint {
+                font-size: 0.76rem;
+                color: #666;
+                margin-top: -8px;
+            }
+            .sp-modal-tabs { display:flex; border-bottom:1px solid #333; margin-bottom:4px; gap:0; }
+            .sp-modal-tab { flex:1; padding:8px 4px; background:none; border:none; border-bottom:2px solid transparent; color:#666; cursor:pointer; font-size:.82rem; }
+            .sp-modal-tab.active { color:#e0e0e0; border-bottom-color:#2a6df4; }
+            .sp-modal-tab:hover:not(.active) { color:#aaa; }
+            .modal-row select { background:#1a1a1a; border:1px solid #444; border-radius:6px; color:#e0e0e0; padding:7px 10px; font-size:.88rem; width:100%; color-scheme:dark; }
+            .modal-row select:focus { outline:none; border-color:#2a6df4; }
+            .modal-actions {
+                display: flex;
+                gap: 10px;
+                justify-content: flex-end;
+            }
+            .btn {
+                padding: 7px 18px;
+                border-radius: 6px;
+                border: none;
+                cursor: pointer;
+                font-size: 0.85rem;
+            }
+            .btn-primary {
+                background: #2a6df4;
+                color: #fff;
+            }
+            .btn-primary:hover {
+                background: #1a5de0;
+            }
+            .btn-ghost {
+                background: transparent;
+                color: #aaa;
+                border: 1px solid #444;
+            }
+            .btn-ghost:hover {
+                background: #333;
+            }
+            .btn-clear {
+                background: transparent;
+                color: #e05050;
+                border: 1px solid #e05050;
+            }
+            .btn-clear:hover {
+                background: rgba(224, 80, 80, 0.1);
+            }
+            .tab-nav { background:#111; border-bottom:1px solid #333; display:flex; padding:0 24px; }
+            .tab-btn { padding:10px 20px; border:none; background:transparent; color:#666; cursor:pointer; font-size:.88rem; border-bottom:2px solid transparent; letter-spacing:.02em; }
+            .tab-btn.active { color:#e0e0e0; border-bottom-color:#2a6df4; }
+            .tab-btn:hover:not(.active) { color:#aaa; }
+            .error-banner { background:rgba(224,80,80,.12); border:1px solid #e05050; border-radius:8px; color:#e08080; padding:12px 16px; font-size:.85rem; margin:16px 24px 0; display:none; }
+            #sp-upload-zone { display:flex; height:calc(100vh - 98px); position:relative; }
+            #sp-continue-bar { display:none; position:absolute; bottom:32px; left:0; right:0; text-align:center; }
+            .sp-slots { display:flex; width:100%; height:100%; gap:0; padding:0; flex-wrap:nowrap; }
+            .sp-slot { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:#555; position:relative; }
+            .sp-slot + .sp-slot { border-left:1px solid #2a2a2a; }
+            .sp-slot.drag-over { color:#2a6df4; border:2px dashed #2a6df4; }
+            .sp-slot.loaded { color:#50d080; }
+            .sp-slot svg { opacity:.4; }
+            .sp-slot p { font-size:1rem; }
+            .sp-slot small { font-size:.8rem; }
+            .sp-slot-header { position:absolute; top:24px; left:50%; transform:translateX(-50%); font-size:.82rem; color:#aaa; text-transform:uppercase; letter-spacing:.06em; white-space:nowrap; }
+            .sp-slot-status { font-size:.8rem; }
+            .sp-slot.loaded .sp-slot-status { color:#50d080; }
+            .sp-browse-btn { background:#2a6df4; color:#fff; padding:6px 16px; border-radius:6px; cursor:pointer; font-size:.85rem; white-space:nowrap; }
+            .sp-browse-btn:hover { background:#1a5de0; }
+
+            .chart-vis-section { border-top:1px solid #2a2a2a; border-bottom:1px solid #2a2a2a; background:#1c1c1c; }
+            .chart-vis-toggle { display:flex; align-items:center; gap:8px; width:100%; padding:9px 24px; background:none; border:none; color:#666; cursor:pointer; font-size:.78rem; text-align:left; }
+            .chart-vis-toggle:hover { color:#aaa; }
+            .chart-vis-toggle-label { font-weight:600; color:#888; }
+            .chart-vis-toggle-hint { color:#444; }
+            .chart-vis-caret { margin-left:2px; transition:transform .18s; font-size:.65rem; }
+            .chart-vis-toggle.open .chart-vis-caret { transform:rotate(180deg); }
+            .chart-vis-panel { display:none; padding:0 24px 14px; }
+            .chart-vis-instruction { font-size:.72rem; color:#555; margin-bottom:10px; }
+            .chart-vis-bar { display:grid; grid-template-columns:1fr 1fr; gap:5px; }
+            .chart-vis-btn { padding:4px 12px; border:1px solid #444; border-radius:20px; background:transparent; color:#e0e0e0; cursor:pointer; font-size:.78rem; text-align:left; }
+            .chart-vis-btn.hidden-chart { color:#444; border-color:#2a2a2a; text-decoration:line-through; }
+            .chart-vis-btn:hover { border-color:#888; color:#aaa; }
+            .chart-vis-sep { display:none; }
+            .chart-vis-reset { grid-column:1/-1; padding:4px 12px; border:1px solid #2a6df4; border-radius:20px; background:transparent; color:#2a6df4; cursor:pointer; font-size:.78rem; text-align:center; margin-top:2px; }
+            .chart-vis-reset:hover { background:#2a6df420; }
+            .sp-card-row { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px; }
+            .sp-card-loc { font-size:.72rem; color:#888; text-transform:uppercase; letter-spacing:.04em; }
+            .sp-card-row .card-value { font-size:1.2rem; }
+
+            /* Loading overlay */
+            #loading-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.65); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
+            #loading-overlay.active { display:flex; }
+            .spinner { width:36px; height:36px; border:3px solid #333; border-top-color:#2a6df4; border-radius:50%; animation:spin .8s linear infinite; }
+            @keyframes spin { to { transform:rotate(360deg); } }
+            #loading-overlay p { font-size:.9rem; color:#aaa; }
+            .sp-reset-bar { display:flex; justify-content:flex-end; padding:0 24px 0; }
+            .card.kiln-temp { border-color:#30b0f0; }
+            .card.out-temp { border-color:#f08030; }
+            .card.kiln-hum { border-color:#60d0b0; }
+            .card.out-hum { border-color:#60a0e0; }
+            /* Time window filter card */
+            .tw-filter-card { border-color:#4a3a6a; }
+            .tw-btn { flex:1; padding:4px 0; border:1px solid #444; border-radius:4px; background:transparent; color:#888; cursor:pointer; font-size:.75rem; }
+            .tw-btn.active { background:#2a6df4; border-color:#2a6df4; color:#fff; }
+            .tw-btn:hover:not(.active) { border-color:#888; color:#aaa; }
+            .tw-hours { font-size:.75rem; color:#888; display:flex; flex-direction:column; }
+            .tw-hours label { display:flex; align-items:center; gap:4px; margin-bottom:4px; }
+            .tw-hours.night-order label:first-child { order:2; }
+            .tw-hours.night-order label:last-child  { order:1; }
+            .tw-hours input[type=number] { width:42px; background:#1a1a1a; border:1px solid #444; border-radius:4px; color:#e0e0e0; padding:2px 5px; font-size:.75rem; text-align:center; -moz-appearance:textfield; }
+            .tw-hours input[type=number]::-webkit-inner-spin-button { display:none; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>KilnLog</h1>
+            <a href="https://github.com/eabredder/KilnLog" target="_blank" rel="noopener" title="Help &amp; documentation" style="margin-left:auto;color:#888;font-size:.82rem;text-decoration:none;display:flex;align-items:center;gap:5px;white-space:nowrap;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Help
+            </a>
+            <button id="kt-reload-btn" onclick="resetKT()" style="display:none;background:#2a6df4;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:.85rem;border:none;white-space:nowrap;">Load new file</button>
+            <button id="sp-reload-btn" onclick="resetSP()" style="display:none;background:#2a6df4;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:.85rem;border:none;white-space:nowrap;">Load new files</button>
+        </header>
+        <nav class="tab-nav">
+          <button class="tab-btn active" id="tab-kt" onclick="showTab('kt')">Kilntroller</button>
+          <button class="tab-btn" id="tab-sp" onclick="showTab('sp')">SensorPush</button>
+        </nav>
+
+        <div id="kt-view">
+            <div id="kt-error-banner" class="error-banner"></div>
+
+            <div id="drop-zone">
+                <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                >
+                    <path
+                        d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="12" y1="18" x2="12" y2="12" />
+                    <polyline points="9 15 12 12 15 15" />
+                </svg>
+                <p>Drop a kilntroller CSV here</p>
+                <label class="sp-browse-btn">
+                    Browse
+                    <input type="file" id="file-input" accept=".csv" style="display:none">
+                </label>
+                <small>Kilntroller CSV export from the SD card</small>
+            </div>
+
+            <div id="content" style="display:none">
+                <!-- Summary cards -->
+                <div class="cards">
+                    <div class="card emc">
+                        <div class="card-label">EMC</div>
+                        <div class="sp-card-row">
+                            <span class="sp-card-loc">Wet-bulb</span>
+                            <span><span class="card-value" id="c-emc">—</span><span class="card-unit">%</span></span>
+                        </div>
+                        <div class="sp-card-row">
+                            <span class="sp-card-loc">Estimated</span>
+                            <span><span class="card-value" id="c-emc-est">—</span><span class="card-unit">%</span></span>
+                        </div>
+                        <div class="card-sub" id="c-emc-thresh">—</div>
+                    </div>
+                    <div class="card temp">
+                        <div class="card-label">Temperature</div>
+                        <div class="sp-card-row">
+                            <span class="sp-card-loc">Dry bulb</span>
+                            <span><span class="card-value" id="c-tdb">—</span><span class="card-unit">°C</span></span>
+                        </div>
+                        <div class="sp-card-row">
+                            <span class="sp-card-loc">Wet wick</span>
+                            <span><span class="card-value" id="c-twb">—</span><span class="card-unit">°C</span></span>
+                        </div>
+                        <div class="sp-card-row">
+                            <span class="sp-card-loc">Outside</span>
+                            <span><span class="card-value" id="c-outt">—</span><span class="card-unit">°C</span></span>
+                        </div>
+                    </div>
+                    <div class="card hum">
+                        <div class="card-label">Humidity</div>
+                        <div class="sp-card-row">
+                            <span class="sp-card-loc">Kiln RH</span>
+                            <span><span class="card-value" id="c-rh">—</span><span class="card-unit">%</span></span>
+                        </div>
+                        <div class="sp-card-row">
+                            <span class="sp-card-loc">Outside RH</span>
+                            <span><span class="card-value" id="c-outh">—</span><span class="card-unit">%</span></span>
+                        </div>
+                        <div class="card-sub" id="c-dt">Temp depression —</div>
+                    </div>
+                    <div class="card fans">
+                        <div class="card-label">Fan Activity</div>
+                        <div class="sp-card-row">
+                            <span class="sp-card-loc">Total runtime</span>
+                            <span><span class="card-value" id="c-fans">—</span><span class="card-unit">hrs</span></span>
+                        </div>
+                        <div class="sp-card-row">
+                            <span class="sp-card-loc">Daily avg</span>
+                            <span><span class="card-value" id="c-fans-daily">—</span><span class="card-unit">hrs/day</span></span>
+                        </div>
+                        <div class="card-sub"><span id="c-fans-pct">—</span> · <span id="c-fans-days">—</span></div>
+                    </div>
+                    <div
+                        class="card clickable"
+                        id="readings-card"
+                        onclick="openModal()"
+                    >
+                        <div class="card-label">Readings</div>
+                        <div class="card-value" id="c-rows">—</div>
+                        <div class="card-sub" id="c-span">—</div>
+                        <div class="card-hint">Click to filter by date</div>
+                    </div>
+                    <div class="card tw-filter-card" id="kt-tw-card">
+                        <div class="card-label">Time Window</div>
+                        <div style="display:flex;gap:5px;margin-bottom:8px">
+                            <button class="tw-btn active" data-tw-mode="all"   onclick="setTimeFilter('kt','all')">All</button>
+                            <button class="tw-btn"        data-tw-mode="day"   onclick="setTimeFilter('kt','day')">Day</button>
+                            <button class="tw-btn"        data-tw-mode="night" onclick="setTimeFilter('kt','night')">Night</button>
+                        </div>
+                        <div class="tw-hours" style="display:none">
+                            <label><span id="kt-tw-l1">Day start</span> <input type="number" id="kt-day-start" min="0" max="23" value="6" oninput="setDayHours('kt',this.value,document.getElementById('kt-day-end').value)"> :00 UTC</label>
+                            <label><span id="kt-tw-l2">Day end</span> <input type="number" id="kt-day-end"   min="1" max="24" value="18" oninput="setDayHours('kt',document.getElementById('kt-day-start').value,this.value)"> :00 UTC</label>
+                        </div>
+                        <div id="kt-tw-hint" style="display:none;color:#e08080;font-size:.75rem;margin-top:4px;"></div>
+                    </div>
+                    <div class="card bat">
+                        <div class="card-label">Battery</div>
+                        <div>
+                            <span class="card-value" id="c-batv">—</span
+                            ><span class="card-unit">V</span>
+                        </div>
+                        <div class="card-sub" id="c-batsoc">—</div>
+                        <div class="card-sub" id="c-batv-range">—</div>
+                    </div>
+                    <div class="card bat">
+                        <div class="card-label">Solar Panel</div>
+                        <div>
+                            <span class="card-value" id="c-pvv">—</span
+                            ><span class="card-unit">V</span>
+                        </div>
+                        <div class="card-sub" id="c-pva">—</div>
+                        <div class="card-sub" id="c-pvv-range">—</div>
+                    </div>
+                </div>
+
+                <!-- Date range modal -->
+                <div id="modal-overlay">
+                    <div id="modal">
+                        <h2>Filter data</h2>
+                        <div class="sp-modal-tabs">
+                            <button class="sp-modal-tab active" id="kt-tab-range" onclick="switchKTModalMode('range')">Date Range</button>
+                            <button class="sp-modal-tab" id="kt-tab-month" onclick="switchKTModalMode('month')">Month &amp; Year</button>
+                        </div>
+                        <div id="kt-modal-date-section" style="display:flex;flex-direction:column;gap:16px">
+                            <div class="modal-row">
+                                <label for="date-from">From</label>
+                                <input type="datetime-local" id="date-from" />
+                            </div>
+                            <div class="modal-row">
+                                <label for="date-to">To</label>
+                                <input type="datetime-local" id="date-to" />
+                            </div>
+                            <div id="modal-range-hint"></div>
+                        </div>
+                        <div id="kt-modal-month-section" style="display:none;flex-direction:column;gap:16px">
+                            <div class="modal-row">
+                                <label for="kt-filter-month">Month</label>
+                                <select id="kt-filter-month">
+                                    <option value="0">January</option><option value="1">February</option>
+                                    <option value="2">March</option><option value="3">April</option>
+                                    <option value="4">May</option><option value="5">June</option>
+                                    <option value="6">July</option><option value="7">August</option>
+                                    <option value="8">September</option><option value="9">October</option>
+                                    <option value="10">November</option><option value="11">December</option>
+                                </select>
+                            </div>
+                            <div class="modal-row">
+                                <label for="kt-filter-year">Year</label>
+                                <select id="kt-filter-year"></select>
+                            </div>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn btn-clear" onclick="clearFilter()">
+                                Show all
+                            </button>
+                            <button class="btn btn-ghost" onclick="closeModal()">
+                                Cancel
+                            </button>
+                            <button class="btn btn-primary" onclick="applyFilter()">
+                                Apply
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart visibility -->
+                <div class="chart-vis-section" id="kt-vis-section">
+                  <button class="chart-vis-toggle" id="kt-vis-toggle" onclick="toggleVisPanel('kt')">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    <span class="chart-vis-toggle-label">Charts</span>
+                    <span class="chart-vis-toggle-hint">· show or hide individual charts</span>
+                    <span class="chart-vis-caret">▼</span>
+                  </button>
+                  <div class="chart-vis-panel" id="kt-vis-panel">
+                    <p class="chart-vis-instruction">Click a chart name to hide it · click again to show it</p>
+                    <div class="chart-vis-bar" id="kt-vis-bar">
+                      <button class="chart-vis-btn" id="kt-vis-emc"        onclick="toggleKTChart('kt-card-emc',        'kt-vis-emc')">EMC</button>
+                      <button class="chart-vis-btn" id="kt-vis-fans"      onclick="toggleKTChart('kt-card-fans',      'kt-vis-fans')">Fan Activity</button>
+                      <button class="chart-vis-btn" id="kt-vis-dt"        onclick="toggleKTChart('kt-card-dt',        'kt-vis-dt')">Temp Depression</button>
+                      <button class="chart-vis-btn" id="kt-vis-temp"      onclick="toggleKTChart('kt-card-temp',      'kt-vis-temp')">Temperature</button>
+                      <button class="chart-vis-btn" id="kt-vis-hum"       onclick="toggleKTChart('kt-card-hum',       'kt-vis-hum')">Humidity</button>
+                      <button class="chart-vis-btn" id="kt-vis-hum-delta" onclick="toggleKTChart('kt-card-hum-delta', 'kt-vis-hum-delta')">Humidity Δ</button>
+                      <button class="chart-vis-btn" id="kt-vis-rh-emc"    onclick="toggleKTChart('kt-card-rh-emc',    'kt-vis-rh-emc')">Outside RH / EMC</button>
+                      <button class="chart-vis-btn" id="kt-vis-temp-delta" onclick="toggleKTChart('kt-card-temp-delta', 'kt-vis-temp-delta')">Temp Δ</button>
+                      <button class="chart-vis-btn" id="kt-vis-monthly"   onclick="toggleKTChart('kt-card-monthly',   'kt-vis-monthly')">Monthly Averages</button>
+                      <button class="chart-vis-btn" id="kt-vis-bat"       onclick="toggleKTChart('kt-card-bat',       'kt-vis-bat')">Battery &amp; Solar</button>
+                      <button class="chart-vis-btn" id="kt-vis-wick"      onclick="toggleKTChart('kt-card-wick',      'kt-vis-wick')">Wick Health</button>
+                      <div class="chart-vis-sep"></div>
+                      <button class="chart-vis-reset" onclick="resetKTChartVis()">Show all</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="kt-empty-msg" style="display:none;padding:40px 24px;color:#666;font-size:.9rem;text-align:center;">No data in this range — try widening the date or time window filter.</div>
+
+                <!-- Charts -->
+                <div class="charts">
+                    <div class="chart-card wide" id="kt-card-emc">
+                        <h3>Equilibrium Moisture Content (EMC) with fan on/off thresholds
+                          <span style="font-size:.75rem;font-weight:400;color:#666"> — dashed line: estimated from dry-bulb sensor RH only</span>
+                        </h3>
+                        <canvas id="chart-emc" height="90"></canvas>
+                        <p id="emc-mode-summary" style="font-size:.72rem;color:#666;margin-top:6px;text-align:right"></p>
+                    </div>
+                    <div class="chart-card wide" id="kt-card-fans">
+                        <h3>Fan activity — fans running over time</h3>
+                        <canvas id="chart-fans" height="60"></canvas>
+                    </div>
+                    <div class="chart-card" id="kt-card-dt">
+                        <h3>Temperature depression (wet-bulb wick health)</h3>
+                        <p class="chart-note">
+                            A healthy wick typically shows 4–8 °C depression. Values
+                            include a small upward offset from the dry-bulb heater.
+                            Watch for the trend collapsing toward zero — that
+                            traditionally signals the wick needs re-wetting,
+                            regardless of the baseline.
+                        </p>
+                        <canvas id="chart-dt" height="140"></canvas>
+                    </div>
+                    <div class="chart-card" id="kt-card-temp">
+                        <h3>Kiln vs. Outside Temperature</h3>
+                        <p class="chart-note">
+                            Yellow shading = kiln warmer than outside (solar gain).
+                            Blue shading = kiln cooler than outside. Dry-bulb reads
+                            slightly high (+0.5–2 °C) due to the sensor's
+                            anti-condensation heater — trends are reliable, absolute
+                            values include a small upward bias.
+                        </p>
+                        <canvas id="chart-temp" height="140"></canvas>
+                    </div>
+                    <div class="chart-card wide" id="kt-card-hum">
+                        <h3>Kiln vs. Outside Humidity</h3>
+                        <canvas id="chart-hum" height="90"></canvas>
+                    </div>
+                    <div class="chart-card wide" id="kt-card-hum-delta">
+                        <h3>Humidity Difference (Kiln &minus; Outside)</h3>
+                        <canvas id="chart-hum-delta" height="90"></canvas>
+                    </div>
+                    <div class="chart-card wide" id="kt-card-rh-emc">
+                        <h3>Outside humidity vs. kiln EMC</h3>
+                        <canvas id="chart-rh-emc" height="90"></canvas>
+                    </div>
+                    <div class="chart-card wide" id="kt-card-temp-delta">
+                        <h3>Temperature Difference (Kiln &minus; Outside)</h3>
+                        <canvas id="chart-temp-delta" height="90"></canvas>
+                    </div>
+                    <div class="chart-card wide" id="kt-card-monthly">
+                        <h3>Monthly Averages <span style="font-size:.75rem;font-weight:400;color:#666">— full dataset · follows time window filter</span></h3>
+                        <canvas id="chart-monthly" height="120"></canvas>
+                    </div>
+                    <div class="chart-card" id="kt-card-bat">
+                        <h3>Battery &amp; Solar</h3>
+                        <canvas id="chart-bat" height="140"></canvas>
+                    </div>
+                    <div class="chart-card" id="kt-card-wick">
+                        <h3>Wick Health
+                          <span style="font-size:.75rem;font-weight:400;color:#666"> — wick-adjacent RH &amp; dew-point margin · dashed lines: 88 % good / 70 % failed thresholds</span>
+                        </h3>
+                        <canvas id="chart-wick" height="140"></canvas>
+                        <p id="kt-wick-note" style="font-size:.75rem;color:#888;margin:4px 0 0 2px;"></p>
+                    </div>
+                </div>
+
+                <!-- Raw data table -->
+                <div class="table-card">
+                    <h3>Log data</h3>
+                    <div class="table-wrap">
+                        <table id="data-table">
+                            <thead id="table-head"></thead>
+                            <tbody id="table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sp-view" style="display:none">
+          <div id="sp-error-banner" class="error-banner"></div>
+
+          <div id="sp-upload-zone">
+            <div class="sp-slots">
+              <!-- Inside slot -->
+              <div class="sp-slot" id="sp-slot-inside">
+                <div class="sp-slot-header">Inside Kiln</div>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/>
+                  <polyline points="9 15 12 12 15 15"/>
+                </svg>
+                <p>Drop SensorPush CSV here</p>
+                <label class="sp-browse-btn">
+                  Browse
+                  <input type="file" id="sp-inside-input" accept=".csv" style="display:none">
+                </label>
+                <small>Inside / kiln sensor export</small>
+                <div class="sp-slot-status" id="sp-inside-status">No file loaded</div>
+              </div>
+              <!-- Outside slot -->
+              <div class="sp-slot" id="sp-slot-outside">
+                <div class="sp-slot-header">Outside <span style="font-size:.7rem;color:#555;font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></div>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/>
+                  <polyline points="9 15 12 12 15 15"/>
+                </svg>
+                <p>Drop SensorPush CSV here</p>
+                <label class="sp-browse-btn">
+                  Browse
+                  <input type="file" id="sp-outside-input" accept=".csv" style="display:none">
+                </label>
+                <small>Outside / ambient sensor export</small>
+                <div class="sp-slot-status" id="sp-outside-status">No file loaded</div>
+              </div>
+            </div>
+            <div id="sp-continue-bar">
+              <button onclick="continueWithInsideOnly()" style="background:#2a6df4;color:#fff;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:.88rem;border:none">Continue with inside data only →</button>
+            </div>
+          </div>
+
+          <div id="sp-content" style="display:none; padding:20px 24px">
+            <!-- Summary cards -->
+            <div class="cards">
+              <div class="card emc">
+                <div class="card-label">Avg Est. EMC</div>
+                <div class="sp-card-row">
+                  <span class="sp-card-loc">Kiln</span>
+                  <span><span class="card-value" id="sp-c-kiln-emc">—</span><span class="card-unit">%</span></span>
+                </div>
+                <div class="sp-card-row" id="sp-c-out-emc-row">
+                  <span class="sp-card-loc">Outside</span>
+                  <span><span class="card-value" id="sp-c-out-emc">—</span><span class="card-unit">%</span></span>
+                </div>
+                <div class="card-sub" id="sp-c-emc-sub">Estimated only</div>
+              </div>
+              <div class="card kiln-temp">
+                <div class="card-label">Avg Temperature</div>
+                <div class="sp-card-row">
+                  <span class="sp-card-loc">Kiln</span>
+                  <span><span class="card-value" id="sp-c-kiln-temp">—</span><span class="card-unit">°C</span></span>
+                </div>
+                <div class="sp-card-row">
+                  <span class="sp-card-loc">Outside</span>
+                  <span><span class="card-value" id="sp-c-out-temp">—</span><span class="card-unit">°C</span></span>
+                </div>
+                <div class="card-sub" id="sp-c-temp-sub">All hours</div>
+              </div>
+              <div class="card kiln-hum">
+                <div class="card-label">Avg Humidity</div>
+                <div class="sp-card-row">
+                  <span class="sp-card-loc">Kiln</span>
+                  <span><span class="card-value" id="sp-c-kiln-hum">—</span><span class="card-unit">%</span></span>
+                </div>
+                <div class="sp-card-row">
+                  <span class="sp-card-loc">Outside</span>
+                  <span><span class="card-value" id="sp-c-out-hum">—</span><span class="card-unit">%</span></span>
+                </div>
+                <div class="card-sub" id="sp-c-hum-sub">All hours</div>
+              </div>
+              <div class="card clickable" id="sp-readings-card" onclick="openSPModal()">
+                <div class="card-label">Readings</div>
+                <div class="card-value" id="sp-c-rows">—</div>
+                <div class="card-sub" id="sp-c-span">—</div>
+                <div class="card-hint">Click to filter by date</div>
+              </div>
+              <div class="card tw-filter-card" id="sp-tw-card">
+                <div class="card-label">Time Window</div>
+                <div style="display:flex;gap:5px;margin-bottom:8px">
+                  <button class="tw-btn active" data-tw-mode="all"   onclick="setTimeFilter('sp','all')">All</button>
+                  <button class="tw-btn"        data-tw-mode="day"   onclick="setTimeFilter('sp','day')">Day</button>
+                  <button class="tw-btn"        data-tw-mode="night" onclick="setTimeFilter('sp','night')">Night</button>
+                </div>
+                <div class="tw-hours" style="display:none">
+                  <label><span id="sp-tw-l1">Day start</span> <input type="number" id="sp-day-start" min="0" max="23" value="6" oninput="setDayHours('sp',this.value,document.getElementById('sp-day-end').value)"> :00 UTC</label>
+                  <label><span id="sp-tw-l2">Day end</span> <input type="number" id="sp-day-end"   min="1" max="24" value="18" oninput="setDayHours('sp',document.getElementById('sp-day-start').value,this.value)"> :00 UTC</label>
+                </div>
+                <div id="sp-tw-hint" style="display:none;color:#e08080;font-size:.75rem;margin-top:4px;"></div>
+              </div>
+            </div>
+
+            <!-- SP date range modal -->
+            <div id="sp-modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;align-items:center;justify-content:center">
+              <div id="sp-modal" style="background:#242424;border:1px solid #444;border-radius:10px;padding:24px;width:340px;display:flex;flex-direction:column;gap:16px">
+                <h2 style="font-size:.95rem;font-weight:600">Filter data</h2>
+                <div class="sp-modal-tabs">
+                  <button class="sp-modal-tab active" id="sp-tab-range" onclick="switchSPModalMode('range')">Date Range</button>
+                  <button class="sp-modal-tab" id="sp-tab-month" onclick="switchSPModalMode('month')">Month &amp; Year</button>
+                </div>
+                <div id="sp-modal-date-section" style="display:flex;flex-direction:column;gap:16px">
+                  <div class="modal-row"><label for="sp-date-from">From</label><input type="datetime-local" id="sp-date-from"></div>
+                  <div class="modal-row"><label for="sp-date-to">To</label><input type="datetime-local" id="sp-date-to"></div>
+                  <div id="sp-modal-range-hint" style="font-size:.76rem;color:#666;margin-top:-8px"></div>
+                </div>
+                <div id="sp-modal-month-section" style="display:none;flex-direction:column;gap:16px">
+                  <div class="modal-row">
+                    <label for="sp-filter-month">Month</label>
+                    <select id="sp-filter-month">
+                      <option value="0">January</option><option value="1">February</option>
+                      <option value="2">March</option><option value="3">April</option>
+                      <option value="4">May</option><option value="5">June</option>
+                      <option value="6">July</option><option value="7">August</option>
+                      <option value="8">September</option><option value="9">October</option>
+                      <option value="10">November</option><option value="11">December</option>
+                    </select>
+                  </div>
+                  <div class="modal-row"><label for="sp-filter-year">Year</label><select id="sp-filter-year"></select></div>
+                </div>
+                <div class="modal-actions">
+                  <button class="btn btn-clear" onclick="clearSPFilter()">Show all</button>
+                  <button class="btn btn-ghost" onclick="closeSPModal()">Cancel</button>
+                  <button class="btn btn-primary" onclick="applySPFilter()">Apply</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chart visibility -->
+            <div class="chart-vis-section" id="sp-vis-section" style="display:none">
+              <button class="chart-vis-toggle" id="sp-vis-toggle" onclick="toggleVisPanel('sp')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                <span class="chart-vis-toggle-label">Charts</span>
+                <span class="chart-vis-toggle-hint">· show or hide individual charts</span>
+                <span class="chart-vis-caret">▼</span>
+              </button>
+              <div class="chart-vis-panel" id="sp-vis-panel">
+                <p class="chart-vis-instruction">Click a chart name to hide it · click again to show it</p>
+                <div class="chart-vis-bar" id="sp-vis-bar">
+                  <button class="chart-vis-btn" id="sp-vis-emc"     onclick="toggleSPChart('sp-card-emc',        'sp-vis-emc')">Estimated EMC</button>
+                  <button class="chart-vis-btn" id="sp-vis-hum"     onclick="toggleSPChart('sp-card-hum',        'sp-vis-hum')">Humidity</button>
+                  <button class="chart-vis-btn" id="sp-vis-hdelta"  onclick="toggleSPChart('sp-card-hum-delta',  'sp-vis-hdelta')" style="display:none">Humidity Δ</button>
+                  <button class="chart-vis-btn" id="sp-vis-temp"    onclick="toggleSPChart('sp-card-temp',       'sp-vis-temp')">Temperature</button>
+                  <button class="chart-vis-btn" id="sp-vis-tdelta"  onclick="toggleSPChart('sp-card-temp-delta', 'sp-vis-tdelta')" style="display:none">Temp Δ</button>
+                  <button class="chart-vis-btn" id="sp-vis-monthly" onclick="toggleSPChart('sp-card-monthly',    'sp-vis-monthly')">Monthly Averages</button>
+                  <div class="chart-vis-sep"></div>
+                  <button class="chart-vis-reset" onclick="resetSPChartVis()">Show all</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="sp-empty-msg" style="display:none;padding:40px 24px;color:#666;font-size:.9rem;text-align:center;">No data in this range — try widening the date or time window filter.</div>
+
+            <!-- Charts -->
+            <div class="charts">
+              <div class="chart-card wide" id="sp-card-emc">
+                <h3>Estimated EMC <span style="font-size:.75rem;font-weight:400;color:#666">— approximation only · derived from ambient RH, not a psychrometric wet/dry bulb measurement</span></h3>
+                <canvas id="sp-chart-emc" height="90"></canvas>
+              </div>
+              <div class="chart-card wide" id="sp-card-hum">
+                <h3>Kiln vs. Outside Humidity</h3>
+                <canvas id="sp-chart-hum" height="90"></canvas>
+              </div>
+              <div class="chart-card wide" id="sp-card-hum-delta">
+                <h3>Humidity Difference (Inside &minus; Outside)</h3>
+                <canvas id="sp-chart-hum-delta" height="90"></canvas>
+              </div>
+              <div class="chart-card wide" id="sp-card-temp">
+                <h3>Kiln vs. Outside Temperature</h3>
+                <canvas id="sp-chart-temp" height="90"></canvas>
+              </div>
+              <div class="chart-card wide" id="sp-card-temp-delta">
+                <h3>Temperature Difference (Inside &minus; Outside)</h3>
+                <canvas id="sp-chart-temp-delta" height="90"></canvas>
+              </div>
+              <div class="chart-card wide" id="sp-card-monthly">
+                <h3>Monthly Averages <span style="font-size:.75rem;font-weight:400;color:#666">— full dataset · follows time window filter</span></h3>
+                <canvas id="sp-chart-monthly" height="120"></canvas>
+              </div>
+            </div>
+
+            <!-- Raw data table -->
+            <div class="table-card">
+              <h3>Raw data</h3>
+              <div class="table-wrap">
+                <table id="sp-data-table">
+                  <thead id="sp-table-head"></thead>
+                  <tbody id="sp-table-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+            // ── CSV parser ─────────────────────────────────────────────────────────────
+            function parseCSVLine(line) {
+              const result = [];
+              let cur = '', inQ = false;
+              for (let i = 0; i < line.length; i++) {
+                const ch = line[i];
+                if (ch === '"') { inQ = !inQ; }
+                else if (ch === ',' && !inQ) { result.push(cur.trim()); cur = ''; }
+                else { cur += ch; }
+              }
+              result.push(cur.trim());
+              return result;
+            }
+
+            function parseCSV(text) {
+                // Strip UTF-8 BOM — SensorPush exports include one; without this
+                // the first header becomes "\uFEFFTime" and format detection fails.
+                const lines = text.replace(/^\uFEFF/, '').trim().split(/\r?\n/);
+                const headers = parseCSVLine(lines[0]).map((h) => h.trim());
+                const rows = [];
+                for (let i = 1; i < lines.length; i++) {
+                    if (!lines[i].trim()) continue;
+                    const vals = parseCSVLine(lines[i]).map((v) => v.trim());
+                    const row = {};
+                    headers.forEach((h, j) => {
+                        row[h] = vals[j] ?? "";
+                    });
+                    rows.push(row);
+                }
+                return { headers, rows };
+            }
+
+            function num(row, key) {
+                const v = parseFloat(row[key]);
+                return isNaN(v) ? null : v;
+            }
+
+            // ── Chart helpers ──────────────────────────────────────────────────────────
+            Chart.defaults.color = "#888";
+            Chart.defaults.borderColor = "#333";
+
+            const FONT = { family: "system-ui, sans-serif", size: 11 };
+
+            // ── In-place chart update state ────────────────────────────────────────────
+            let ktChartByName = {};           // named KT chart refs for in-place updates
+            let spChartByName = {};           // named SP chart refs for in-place updates
+            let ktChartsReady = false;        // true after render() completes
+            let spChartsReady = false;        // true after renderSP() completes
+            let ktEmcPluginData = { modeFlags: [], timestamps: [] };
+            let twDebounceTimer = null;
+
+            function makeChart(id, datasets, yAxes) {
+                const ctx = document.getElementById(id).getContext("2d");
+                return new Chart(ctx, {
+                    type: "line",
+                    data: { datasets },
+                    options: {
+                        animation: false,
+                        parsing: false,
+                        responsive: true,
+                        interaction: { mode: "index", intersect: false },
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    font: FONT,
+                                    boxWidth: 12,
+                                    padding: 14,
+                                },
+                            },
+                            tooltip: { font: FONT },
+                            decimation: {
+                                enabled: true,
+                                algorithm: 'lttb',
+                                samples: 500,
+                                threshold: 200,
+                            },
+                        },
+                        scales: {
+                            x: {
+                                type: "time",
+                                time: {
+                                    tooltipFormat: "yyyy-MM-dd HH:mm",
+                                    displayFormats: {
+                                        hour: "MM-dd HH:mm",
+                                        day: "MM-dd",
+                                        week: "MM-dd",
+                                        month: "yyyy-MM",
+                                    },
+                                },
+                                ticks: {
+                                    font: FONT,
+                                    maxTicksLimit: 10,
+                                    maxRotation: 30,
+                                },
+                                grid: { color: "#2a2a2a" },
+                            },
+                            ...yAxes,
+                        },
+                    },
+                });
+            }
+
+            // ── Render ─────────────────────────────────────────────────────────────────
+            let charts = [];
+
+            // ── Hoisted helpers (used by both render and in-place refresh) ─────────────
+            function trendLine(xyPairs) {
+                const pts = xyPairs.filter((p) => p.y !== null && !isNaN(p.y));
+                if (pts.length < 2) return null;
+                const n = pts.length;
+                const sx = pts.reduce((a, p) => a + p.x, 0);
+                const sy = pts.reduce((a, p) => a + p.y, 0);
+                const sxx = pts.reduce((a, p) => a + p.x * p.x, 0);
+                const sxy = pts.reduce((a, p) => a + p.x * p.y, 0);
+                const m = (n * sxy - sx * sy) / (n * sxx - sx * sx);
+                const b = (sy - m * sx) / n;
+                return [
+                    { x: pts[0].x, y: m * pts[0].x + b },
+                    { x: pts[pts.length - 1].x, y: m * pts[pts.length - 1].x + b },
+                ];
+            }
+            const mAvg = arr => arr.length ? +(arr.reduce((a, b) => a + b, 0) / arr.length).toFixed(2) : null;
+            const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+            // ── KT card update (called on initial render and in-place refresh) ──────────
+            function updateKTCards(rows) {
+              if (!rows.length) return;
+              const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+              const last = rows[rows.length - 1];
+              const emc = num(last, 'EMC%');
+              set('c-emc', emc !== null ? emc.toFixed(1) : '—');
+              const emcEst = emcHH(num(last, 'Tdb_C'), num(last, 'RH_db%'));
+              set('c-emc-est', emcEst !== null ? emcEst.toFixed(1) : '—');
+              const emcOn = num(last, 'EMC_on%'), emcOff = num(last, 'EMC_off%');
+              set('c-emc-thresh', emcOff !== null && emcOn !== null ? `OFF ${emcOff.toFixed(1)} / ON ${emcOn.toFixed(1)}` : '—');
+              const tdb = num(last, 'Tdb_C'), twb = num(last, 'Twb_C');
+              set('c-tdb', tdb !== null ? tdb.toFixed(1) : '—');
+              set('c-twb', twb !== null ? twb.toFixed(1) : '—');
+              const outt = num(last, 'OutT_C'), outh = num(last, 'OutH%');
+              set('c-outt', outt !== null ? outt.toFixed(1) : '—');
+              set('c-outh', outh !== null ? outh.toFixed(0) : '—');
+              const rh = num(last, 'RH_used%'), dt = num(last, 'dT_C');
+              set('c-rh', rh !== null ? rh.toFixed(1) : '—');
+              set('c-dt', dt !== null ? `Temp depression ${dt.toFixed(2)} °C` : 'Temp depression —');
+              const batv = num(last, 'Bat_V'), batsoc = num(last, 'Bat_SOC%');
+              const batvVals = rows.map(r => num(r, 'Bat_V')).filter(v => v !== null);
+              set('c-batv', batv !== null ? batv.toFixed(1) : '—');
+              set('c-batsoc', batsoc !== null ? `Charge ${batsoc.toFixed(0)} %` : '—');
+              set('c-batv-range', batvVals.length ? `Range ${Math.min(...batvVals).toFixed(1)} – ${Math.max(...batvVals).toFixed(1)} V` : '—');
+              const pvv = num(last, 'PV_V'), pva = num(last, 'PV_A');
+              const pvvVals = rows.map(r => num(r, 'PV_V')).filter(v => v !== null);
+              set('c-pvv', pvv !== null ? pvv.toFixed(1) : '—');
+              set('c-pva', pva !== null ? `${pva.toFixed(2)} A` : '—');
+              set('c-pvv-range', pvvVals.length ? `Range ${Math.min(...pvvVals).toFixed(1)} – ${Math.max(...pvvVals).toFixed(1)} V` : '—');
+              const fanKeys = ['Fan0', 'Fan1', 'Fan2', 'Fan3'];
+              const fanOnRows = rows.filter(r => fanKeys.some(k => r[k] === '1')).length;
+              const fanPct = rows.length > 0 ? ((fanOnRows / rows.length) * 100).toFixed(0) : 0;
+              const distinctDays = new Set(rows.map(r => (r['UTC'] || '').slice(0, 10))).size;
+              const avgDaily = distinctDays > 0 ? fanOnRows / distinctDays : 0;
+              set('c-fans', fanOnRows.toFixed(0));
+              set('c-fans-pct', `${fanPct}% of logged time`);
+              set('c-fans-daily', avgDaily.toFixed(1));
+              set('c-fans-days', `over ${distinctDays} day${distinctDays !== 1 ? 's' : ''}`);
+              set('c-rows', rows.length);
+              const firstUtc = rows[0]['UTC'] || '—', lastUtc = last['UTC'] || '—';
+              set('c-span', rows.length > 1 ? `${firstUtc.slice(0, 10)} → ${lastUtc.slice(0, 10)}` : firstUtc.slice(0, 10));
+            }
+
+            // ── KT in-place chart data refresh ───────────────────────────────────────
+            // isVisible(chart): true if chart's canvas is not inside a display:none card
+            function isVisible(chart) {
+              return chart.canvas.closest('[id$="-card"]')?.style.display !== 'none';
+            }
+            function refreshKTData(rows) {
+              if (!ktChartsReady) return;
+              const ts = rows.map(r => new Date(r['UTC'] || 0).getTime());
+              updateKTCards(rows);
+
+              // emcEstData shared by EMC + rhEmc charts — always compute
+              const emcEstData = rows.map((r, i) => {
+                const est = emcHH(num(r, 'Tdb_C'), num(r, 'RH_db%'));
+                return { x: ts[i], y: est !== null ? +est.toFixed(2) : null };
+              });
+
+              // EMC chart
+              const emcC = ktChartByName.emc;
+              if (isVisible(emcC)) {
+                const emcData = rows.map((r, i) => ({ x: ts[i], y: num(r, 'EMC%') }));
+                const modeFlags = rows.map(r => {
+                  const u = num(r, 'RH_used%'), d = num(r, 'RH_db%');
+                  return u !== null && d !== null && Math.abs(u - d) > 0.5;
+                });
+                const psychroCount = modeFlags.filter(Boolean).length;
+                const sensorCount  = modeFlags.length - psychroCount;
+                const psychroPct   = modeFlags.length > 0 ? Math.round(psychroCount / modeFlags.length * 100) : 0;
+                const summaryEl = document.getElementById('emc-mode-summary');
+                if (summaryEl) {
+                  if (psychroCount === 0) summaryEl.innerHTML = '<span style="color:#888">&#9632;</span> RH source: sensor only — no wet wick detected';
+                  else if (sensorCount === 0) summaryEl.innerHTML = '<span style="color:#f08c28">&#9632;</span> RH source: psychrometric (wet-bulb) — 100% of readings';
+                  else summaryEl.innerHTML = `<span style="color:#f08c28">&#9632;</span> Psychrometric: ${psychroPct}% of readings &nbsp;·&nbsp; <span style="color:#888">&#9632;</span> Sensor fallback: ${100 - psychroPct}%`;
+                }
+                ktEmcPluginData.modeFlags = modeFlags;
+                ktEmcPluginData.timestamps = ts;
+                emcC.data.datasets[0].data = emcData;
+                emcC.data.datasets[1].data = emcEstData;
+                emcC.data.datasets[2].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'EMC_on%') }));
+                emcC.data.datasets[3].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'EMC_off%') }));
+                if (emcC.data.datasets[4]) emcC.data.datasets[4].data = trendLine(emcData) || [];
+                emcC.update('none');
+              }
+
+              const fanKeys = ['Fan0', 'Fan1', 'Fan2', 'Fan3'];
+              const fC = ktChartByName.fans;
+              if (isVisible(fC)) {
+                fC.data.datasets[0].data = rows.map((r, i) => ({ x: ts[i], y: fanKeys.filter(k => r[k] === '1').length }));
+                fC.update('none');
+              }
+
+              const tC = ktChartByName.temp;
+              if (isVisible(tC)) {
+                tC.data.datasets[0].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'Tdb_C') }));
+                tC.data.datasets[1].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'Twb_C') }));
+                tC.data.datasets[2].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'OutT_C') }));
+                tC.update('none');
+              }
+
+              const hC = ktChartByName.hum;
+              if (isVisible(hC)) {
+                hC.data.datasets[0].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'RH_used%') }));
+                hC.data.datasets[1].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'OutH%') }));
+                hC.update('none');
+              }
+
+              const bC = ktChartByName.bat;
+              if (isVisible(bC)) {
+                bC.data.datasets[0].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'Bat_V') }));
+                bC.data.datasets[1].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'PV_V') }));
+                bC.data.datasets[2].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'Bat_SOC%') }));
+                bC.update('none');
+              }
+
+              const wC = ktChartByName.wick;
+              if (wC && isVisible(wC)) {
+                wC.data.datasets[0].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'WickRH%') }));
+                // datasets[1] and [2] are static threshold lines — no update needed
+                wC.data.datasets[3].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'DewMargin_C') }));
+                wC.update('none');
+                const failedCount  = rows.filter(r => r['WickHealth'] === '3').length;
+                const anomalyCount = rows.filter(r => r['Anomaly'] === '1').length;
+                const parts = [];
+                if (failedCount  > 0) parts.push(`${failedCount} reading${failedCount !== 1 ? 's' : ''} with wick failed`);
+                if (anomalyCount > 0) parts.push(`${anomalyCount} anomalous reading${anomalyCount !== 1 ? 's' : ''}`);
+                const wickNote = document.getElementById('kt-wick-note');
+                if (wickNote) wickNote.textContent = parts.join(' · ');
+              }
+
+              const rC = ktChartByName.rhEmc;
+              if (isVisible(rC)) {
+                rC.data.datasets[0].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'EMC%') }));
+                rC.data.datasets[1].data = emcEstData;
+                rC.data.datasets[2].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'OutH%') }));
+                rC.update('none');
+              }
+
+              const dC = ktChartByName.dt;
+              if (isVisible(dC)) {
+                dC.data.datasets[0].data = rows.map((r, i) => ({ x: ts[i], y: num(r, 'dT_C') }));
+                dC.data.datasets[1].data = ts.map(t => ({ x: t, y: 0 }));
+                dC.update('none');
+              }
+
+              const tdC = ktChartByName.tempDelta;
+              if (isVisible(tdC)) {
+                tdC.data.datasets[0].data = rows.map((r, i) => {
+                  const a = num(r, 'Tdb_C'), b = num(r, 'OutT_C');
+                  return { x: ts[i], y: (a !== null && b !== null) ? +(a - b).toFixed(2) : null };
+                });
+                tdC.update('none');
+              }
+
+              const hdC = ktChartByName.humDelta;
+              if (isVisible(hdC)) {
+                hdC.data.datasets[0].data = rows.map((r, i) => {
+                  const a = num(r, 'RH_used%'), b = num(r, 'OutH%');
+                  return { x: ts[i], y: (a !== null && b !== null) ? +(a - b).toFixed(2) : null };
+                });
+                hdC.update('none');
+              }
+
+              // Monthly — re-aggregate from full dataset (ignores Readings date filter)
+              const mC = ktChartByName.monthly;
+              if (isVisible(mC)) {
+                const mBuckets = Array.from({ length: 12 }, () => ({ tdb: [], outt: [], emc: [], rh: [], outh: [] }));
+                applyTimeWindowKT(gData.rows).forEach(r => {
+                  const m = new Date(r['UTC'] || 0).getUTCMonth();
+                  const tdb = num(r, 'Tdb_C'), outt = num(r, 'OutT_C'), emc = num(r, 'EMC%'), rh = num(r, 'RH_used%'), outh = num(r, 'OutH%');
+                  if (tdb  !== null) mBuckets[m].tdb.push(tdb);
+                  if (outt !== null) mBuckets[m].outt.push(outt);
+                  if (emc  !== null) mBuckets[m].emc.push(emc);
+                  if (rh   !== null) mBuckets[m].rh.push(rh);
+                  if (outh !== null) mBuckets[m].outh.push(outh);
+                });
+                const mTdb  = mBuckets.map(b => mAvg(b.tdb));
+                const mOutt = mBuckets.map(b => mAvg(b.outt));
+                const mEmc  = mBuckets.map(b => mAvg(b.emc));
+                const mRh   = mBuckets.map(b => mAvg(b.rh));
+                const mOutH = mBuckets.map(b => mAvg(b.outh));
+                const mDT = mTdb.map((v, i) => (v !== null && mOutt[i] !== null) ? +(v - mOutt[i]).toFixed(2) : null);
+                const mDH = mRh.map((v, i)  => (v !== null && mOutH[i] !== null) ? +(v - mOutH[i]).toFixed(2) : null);
+                mC.data.datasets[0].data = mTdb;
+                mC.data.datasets[1].data = mOutt;
+                mC.data.datasets[2].data = mDT;
+                mC.data.datasets[3].data = mRh;
+                mC.data.datasets[4].data = mOutH;
+                mC.data.datasets[5].data = mDH;
+                mC.data.datasets[6].data = mEmc;
+                mC.update('none');
+              }
+            }
+
+            // ── SP card update ───────────────────────────────────────────────────────
+            function updateSPCards(iRows, oRows) {
+              const hasOutside = oRows && oRows.length > 0;
+              const spSet = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+              const fmt1 = v => v !== null ? v.toFixed(1) : '—';
+              const all = () => true;
+              const windowLabel = spFilterMode === 'day'
+                ? `Day · ${spDayStartHour}:00–${spDayEndHour}:00 UTC`
+                : spFilterMode === 'night'
+                  ? `Night · outside ${spDayStartHour}:00–${spDayEndHour}:00 UTC`
+                  : 'All hours';
+              spSet('sp-c-kiln-temp', fmt1(spAvg(iRows, r => getSPTempC(r, spInside),  all)));
+              spSet('sp-c-out-temp',  fmt1(spAvg(oRows, r => getSPTempC(r, spOutside), all)));
+              spSet('sp-c-temp-sub',  windowLabel);
+              spSet('sp-c-kiln-hum',  fmt1(spAvg(iRows, r => getSPHum(r, spInside),   all)));
+              spSet('sp-c-out-hum',   fmt1(spAvg(oRows, r => getSPHum(r, spOutside),  all)));
+              spSet('sp-c-hum-sub',   windowLabel);
+              const kilnEmcFn = r => emcHH(getSPTempC(r, spInside),  getSPHum(r, spInside));
+              const outEmcFn  = r => emcHH(getSPTempC(r, spOutside), getSPHum(r, spOutside));
+              spSet('sp-c-kiln-emc', fmt1(spAvg(iRows, kilnEmcFn, all)));
+              spSet('sp-c-out-emc',  fmt1(hasOutside ? spAvg(oRows, outEmcFn, all) : null));
+              spSet('sp-c-emc-sub',  `Estimated only · ${windowLabel}`);
+              const outEmcRow = document.getElementById('sp-c-out-emc-row');
+              if (outEmcRow) outEmcRow.style.display = hasOutside ? '' : 'none';
+              spSet('sp-c-rows', hasOutside ? `${iRows.length} inside · ${oRows.length} outside` : `${iRows.length} readings`);
+              const allTs = [...iRows.map(r => r[SP_TS]), ...oRows.map(r => r[SP_TS])].sort((a, b) => a - b);
+              if (allTs.length > 0) {
+                const fmt = ts => new Date(ts).toISOString().slice(0, 10);
+                spSet('sp-c-span', allTs.length > 1 ? `${fmt(allTs[0])} → ${fmt(allTs[allTs.length - 1])}` : fmt(allTs[0]));
+              }
+            }
+
+            // ── SP in-place chart data refresh ───────────────────────────────────────
+            function refreshSPData(iRows, oRows) {
+              if (!spChartsReady) return;
+              const hasOutside = oRows && oRows.length > 0;
+              updateSPCards(iRows, oRows);
+
+              const tC = spChartByName.temp;
+              if (tC && isVisible(tC)) {
+                tC.data.datasets[0].data = iRows.map(r => ({ x: r[SP_TS], y: getSPTempC(r, spInside) }));
+                if (tC.data.datasets[1] && hasOutside) tC.data.datasets[1].data = oRows.map(r => ({ x: r[SP_TS], y: getSPTempC(r, spOutside) }));
+                tC.update('none');
+              }
+
+              const hC = spChartByName.hum;
+              if (hC && isVisible(hC)) {
+                hC.data.datasets[0].data = iRows.map(r => ({ x: r[SP_TS], y: getSPHum(r, spInside) }));
+                if (hC.data.datasets[1] && hasOutside) hC.data.datasets[1].data = oRows.map(r => ({ x: r[SP_TS], y: getSPHum(r, spOutside) }));
+                hC.update('none');
+              }
+
+              const eC = spChartByName.emc;
+              if (eC && isVisible(eC)) {
+                eC.data.datasets[0].data = iRows.map(r => {
+                  const t = getSPTempC(r, spInside), h = getSPHum(r, spInside);
+                  const v = emcHH(t, h);
+                  return v !== null ? { x: r[SP_TS], y: +v.toFixed(2) } : { x: r[SP_TS], y: null };
+                });
+                eC.update('none');
+              }
+
+              const tdC = spChartByName.tempDelta;
+              const hdC = spChartByName.humDelta;
+              const needDelta = hasOutside && ((tdC && isVisible(tdC)) || (hdC && isVisible(hdC)));
+              if (needDelta) {
+                const medianInterval = rows => {
+                  if (rows.length < 2) return 30 * 60 * 1000;
+                  const diffs = [];
+                  for (let i = 1; i < rows.length; i++) { const d = rows[i][SP_TS] - rows[i-1][SP_TS]; if (d > 0) diffs.push(d); }
+                  if (!diffs.length) return 30 * 60 * 1000;
+                  diffs.sort((a, b) => a - b);
+                  return diffs[Math.floor(diffs.length / 2)];
+                };
+                const tolerance = Math.max(medianInterval(iRows), medianInterval(oRows)) / 2;
+                const oLookup = oRows.map(r => ({ ts: r[SP_TS], temp: getSPTempC(r, spOutside), hum: getSPHum(r, spOutside) }));
+                const nearestOutside = ts => {
+                  let lo = 0, hi = oLookup.length - 1;
+                  while (lo < hi) { const mid = (lo + hi) >> 1; if (oLookup[mid].ts < ts) lo = mid + 1; else hi = mid; }
+                  const best = (lo > 0 && Math.abs(oLookup[lo-1].ts - ts) < Math.abs(oLookup[lo].ts - ts)) ? oLookup[lo-1] : oLookup[lo];
+                  return Math.abs(best.ts - ts) <= tolerance ? best : null;
+                };
+                if (tdC && isVisible(tdC)) {
+                  tdC.data.datasets[0].data = iRows.flatMap(r => {
+                    const iT = getSPTempC(r, spInside), match = nearestOutside(r[SP_TS]);
+                    return (iT !== null && match?.temp != null) ? [{ x: r[SP_TS], y: +(iT - match.temp).toFixed(2) }] : [];
+                  });
+                  tdC.update('none');
+                }
+                if (hdC && isVisible(hdC)) {
+                  hdC.data.datasets[0].data = iRows.flatMap(r => {
+                    const iH = getSPHum(r, spInside), match = nearestOutside(r[SP_TS]);
+                    return (iH !== null && match?.hum != null) ? [{ x: r[SP_TS], y: +(iH - match.hum).toFixed(2) }] : [];
+                  });
+                  hdC.update('none');
+                }
+              }
+
+              const mC = spChartByName.monthly;
+              if (mC && isVisible(mC)) {
+                // Full dataset — ignores Readings date filter, applies time window only
+                const mkB = () => Array.from({ length: 12 }, () => ({ iT: [], oT: [], iH: [], oH: [] }));
+                const bAll = mkB();
+                applyTimeWindowSP(spInside ? spInside.rows : []).forEach(r => {
+                  const m = new Date(r[SP_TS]).getUTCMonth();
+                  const t = getSPTempC(r, spInside), h = getSPHum(r, spInside);
+                  if (t !== null) bAll[m].iT.push(t);
+                  if (h !== null) bAll[m].iH.push(h);
+                });
+                if (hasOutside) {
+                  applyTimeWindowSP(spOutside ? spOutside.rows : []).forEach(r => {
+                    const m = new Date(r[SP_TS]).getUTCMonth();
+                    const t = getSPTempC(r, spOutside), h = getSPHum(r, spOutside);
+                    if (t !== null) bAll[m].oT.push(t);
+                    if (h !== null) bAll[m].oH.push(h);
+                  });
+                }
+                const mIT = bAll.map(b => mAvg(b.iT)), mOT = bAll.map(b => mAvg(b.oT));
+                const mIH = bAll.map(b => mAvg(b.iH)), mOH = bAll.map(b => mAvg(b.oH));
+                const mDT = mIT.map((v, i) => (v !== null && mOT[i] !== null) ? +(v - mOT[i]).toFixed(2) : null);
+                const mDH = mIH.map((v, i) => (v !== null && mOH[i] !== null) ? +(v - mOH[i]).toFixed(2) : null);
+                mC.data.datasets[0].data = mIT;
+                mC.data.datasets[1].data = mOT;
+                mC.data.datasets[2].data = mDT;
+                mC.data.datasets[3].data = mIH;
+                mC.data.datasets[4].data = mOH;
+                mC.data.datasets[5].data = mDH;
+                mC.update('none');
+              }
+            }
+
+            function render({ headers, rows }) {
+                // Store the incoming rows as the base (date-filtered but pre-time-window)
+                ktBaseRows = rows;
+                rows = applyTimeWindowKT(rows);
+                ktChartByName = {};
+                ktChartsReady = false;
+
+                // Destroy previous charts
+                charts.forEach((c) => c.destroy());
+                charts = [];
+
+                // Show content area regardless so cards and any messages are visible
+                document.getElementById("drop-zone").style.display = "none";
+                document.getElementById("content").style.display = "block";
+                const ktEmptyMsgEl = document.getElementById('kt-empty-msg');
+                if (!rows.length) {
+                    if (ktEmptyMsgEl) ktEmptyMsgEl.style.display = 'block';
+                    return;
+                }
+                if (ktEmptyMsgEl) ktEmptyMsgEl.style.display = 'none';
+                resetKTChartVis();
+
+                // Parse UTC timestamps to milliseconds for the time-scale axis.
+                // parsing:false requires numeric timestamps, not Date objects.
+                // The RTC writes ISO-8601 strings like "2026-03-22T16:00:00Z".
+                const timestamps = rows.map((r) =>
+                    new Date(r["UTC"] || 0).getTime(),
+                );
+
+                // ── Summary cards ──────────────────────────────────────────────────────
+                updateKTCards(rows);
+
+                // ── EMC chart ──────────────────────────────────────────────────────────
+                const emcData = rows.map((r, i) => ({
+                    x: timestamps[i],
+                    y: num(r, "EMC%"),
+                }));
+                const emcEstData = rows.map((r, i) => {
+                    const tdb = num(r, "Tdb_C");
+                    const rhDb = num(r, "RH_db%");
+                    const est = emcHH(tdb, rhDb);
+                    return { x: timestamps[i], y: est !== null ? +est.toFixed(2) : null };
+                });
+                // Per-row mode flag: true = psychrometric path active, false = sensor-only
+                const modeFlags = rows.map(r => {
+                    const rhUsed = num(r, "RH_used%");
+                    const rhDb   = num(r, "RH_db%");
+                    return rhUsed !== null && rhDb !== null && Math.abs(rhUsed - rhDb) > 0.5;
+                });
+                const psychroCount = modeFlags.filter(Boolean).length;
+                const sensorCount  = modeFlags.length - psychroCount;
+                const psychroPct   = modeFlags.length > 0 ? Math.round(psychroCount / modeFlags.length * 100) : 0;
+                const summaryEl = document.getElementById('emc-mode-summary');
+                if (summaryEl) {
+                    if (psychroCount === 0) {
+                        summaryEl.innerHTML = '<span style="color:#888">&#9632;</span> RH source: sensor only — no wet wick detected';
+                    } else if (sensorCount === 0) {
+                        summaryEl.innerHTML = '<span style="color:#f08c28">&#9632;</span> RH source: psychrometric (wet-bulb) — 100% of readings';
+                    } else {
+                        summaryEl.innerHTML =
+                            `<span style="color:#f08c28">&#9632;</span> Psychrometric: ${psychroPct}% of readings` +
+                            ` &nbsp;·&nbsp; <span style="color:#888">&#9632;</span> Sensor fallback: ${100 - psychroPct}%`;
+                    }
+                }
+                ktEmcPluginData.modeFlags = modeFlags;
+                ktEmcPluginData.timestamps = timestamps;
+                const emcOnD = rows.map((r, i) => ({
+                    x: timestamps[i],
+                    y: num(r, "EMC_on%"),
+                }));
+                const emcOffD = rows.map((r, i) => ({
+                    x: timestamps[i],
+                    y: num(r, "EMC_off%"),
+                }));
+                const emcTrend = trendLine(emcData);
+
+                // EMC chart uses direct new Chart() to support the mode-band plugin
+                const modeBandPlugin = {
+                    id: 'emcModeBand',
+                    beforeDraw(chart) {
+                        const { ctx, chartArea, scales } = chart;
+                        if (!chartArea || !scales.x) return;
+                        const { bottom } = chartArea;
+                        const bandH = 6;
+                        const y0 = bottom - bandH;
+                        ctx.save();
+                        ctx.beginPath();
+                        ctx.rect(chartArea.left, chartArea.top, chartArea.width, chartArea.height);
+                        ctx.clip();
+                        const { modeFlags: emcMf, timestamps: emcTs } = ktEmcPluginData;
+                        // Merge consecutive same-color segments: O(segments) not O(n)
+                        let segStart = 0;
+                        for (let i = 1; i <= emcMf.length; i++) {
+                            if (i === emcMf.length || emcMf[i] !== emcMf[segStart]) {
+                                const x0 = scales.x.getPixelForValue(emcTs[segStart]);
+                                const x1 = i < emcTs.length ? scales.x.getPixelForValue(emcTs[i]) : x0 + 2;
+                                if (x1 > x0) {
+                                    ctx.fillStyle = emcMf[segStart]
+                                        ? 'rgba(240,140,40,0.5)'    // psychrometric — amber
+                                        : 'rgba(130,130,130,0.28)'; // sensor fallback — grey
+                                    ctx.fillRect(x0, y0, x1 - x0, bandH);
+                                }
+                                segStart = i;
+                            }
+                        }
+                        ctx.restore();
+                    },
+                };
+                const emcCtx = document.getElementById("chart-emc").getContext("2d");
+                charts.push(new Chart(emcCtx, {
+                    type: "line",
+                    data: {
+                        datasets: [
+                            {
+                                label: "EMC %  (target range shown by thresholds)",
+                                data: emcData,
+                                borderColor: "#f0a030",
+                                backgroundColor: "rgba(240,160,48,0.12)",
+                                fill: false,
+                                tension: 0.3,
+                                pointRadius: rows.length > 48 ? 0 : 3,
+                                borderWidth: 2,
+                            },
+                            {
+                                label: "Est. EMC (dry bulb sensor only)",
+                                data: emcEstData,
+                                borderColor: "#9098d0",
+                                backgroundColor: "transparent",
+                                fill: false,
+                                tension: 0.3,
+                                pointRadius: 0,
+                                borderWidth: 1.5,
+                                borderDash: [4, 3],
+                            },
+                            {
+                                label: "Fans ON above this",
+                                data: emcOnD,
+                                borderColor: "#e05050",
+                                borderDash: [6, 3],
+                                borderWidth: 1.5,
+                                pointRadius: 0,
+                                fill: false,
+                            },
+                            {
+                                label: "Fans OFF below this",
+                                data: emcOffD,
+                                borderColor: "#50b050",
+                                borderDash: [6, 3],
+                                borderWidth: 1.5,
+                                pointRadius: 0,
+                                fill: false,
+                            },
+                            {
+                                label: "EMC trend",
+                                data: emcTrend || [],
+                                borderColor: "#ffffff",
+                                borderDash: [3, 4],
+                                borderWidth: 1,
+                                pointRadius: 0,
+                                fill: false,
+                            },
+                        ],
+                    },
+                    options: {
+                        animation: false,
+                        parsing: false,
+                        responsive: true,
+                        interaction: { mode: "index", intersect: false },
+                        plugins: {
+                            legend: { labels: { font: FONT, boxWidth: 12, padding: 14 } },
+                            tooltip: { font: FONT },
+                            decimation: { enabled: true, algorithm: 'lttb', samples: 500, threshold: 200 },
+                        },
+                        scales: {
+                            x: {
+                                type: "time",
+                                time: {
+                                    tooltipFormat: "yyyy-MM-dd HH:mm",
+                                    displayFormats: { hour: "MM-dd HH:mm", day: "MM-dd", week: "MM-dd", month: "yyyy-MM" },
+                                },
+                                ticks: { font: FONT, maxTicksLimit: 10, maxRotation: 30 },
+                                grid: { color: "#2a2a2a" },
+                            },
+                            y: {
+                                title: { display: true, text: "%", font: FONT },
+                                grid: { color: "#2a2a2a" },
+                                ticks: { font: FONT },
+                            },
+                        },
+                    },
+                    plugins: [modeBandPlugin],
+                }));
+                ktChartByName.emc = charts[charts.length - 1];
+
+                // ── Fan activity chart ────────────────────────────────────────────────
+                // Count how many fans were verified running each hour (0–4).
+                const fanKeys = ["Fan0", "Fan1", "Fan2", "Fan3"];
+                charts.push(ktChartByName.fans =
+                    makeChart(
+                        "chart-fans",
+                        [
+                            {
+                                label: "Fans running",
+                                data: rows.map((r, i) => ({
+                                    x: timestamps[i],
+                                    y: fanKeys.filter((k) => r[k] === "1")
+                                        .length,
+                                })),
+                                borderColor: "#a060f0",
+                                backgroundColor: "rgba(160,96,240,0.18)",
+                                fill: true,
+                                stepped: "before",
+                                tension: 0,
+                                pointRadius: rows.length > 48 ? 0 : 3,
+                                borderWidth: 2,
+                            },
+                        ],
+                        {
+                            y: {
+                                min: 0,
+                                max: 4,
+                                ticks: { font: FONT, stepSize: 1 },
+                                title: {
+                                    display: true,
+                                    text: "Fans",
+                                    font: FONT,
+                                },
+                                grid: { color: "#2a2a2a" },
+                            },
+                        },
+                    ),
+                );
+
+                // ── Temperature chart ─────────────────────────────────────────────────
+                charts.push(ktChartByName.temp =
+                    makeChart(
+                        "chart-temp",
+                        [
+                            {
+                                label: "Kiln dry-bulb (°C)",
+                                data: rows.map((r, i) => ({
+                                    x: timestamps[i],
+                                    y: num(r, "Tdb_C"),
+                                })),
+                                borderColor: "#30b0f0",
+                                // Fill down toward the outside temperature line (dataset index 2)
+                                // to shade the solar heat gain region in yellow.
+                                fill: {
+                                    target: { datasetIndex: 2 },
+                                    above: "rgba(255,221,68,0.18)",
+                                    below: "rgba(96,160,224,0.15)",
+                                },
+                                tension: 0.3,
+                                pointRadius: rows.length > 48 ? 0 : 3,
+                                borderWidth: 2,
+                            },
+                            {
+                                label: "Kiln wet-bulb (°C)",
+                                data: rows.map((r, i) => ({
+                                    x: timestamps[i],
+                                    y: num(r, "Twb_C"),
+                                })),
+                                borderColor: "#60d0ff",
+                                borderDash: [5, 3],
+                                backgroundColor: "transparent",
+                                tension: 0.3,
+                                pointRadius: rows.length > 48 ? 0 : 3,
+                                borderWidth: 1.5,
+                            },
+                            {
+                                label: "Outside (°C)",
+                                data: rows.map((r, i) => ({
+                                    x: timestamps[i],
+                                    y: num(r, "OutT_C"),
+                                })),
+                                borderColor: "#f08030",
+                                backgroundColor: "transparent",
+                                tension: 0.3,
+                                pointRadius: rows.length > 48 ? 0 : 3,
+                                borderWidth: 1.5,
+                            },
+                        ],
+                        {
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: "°C",
+                                    font: FONT,
+                                },
+                                grid: { color: "#2a2a2a" },
+                                ticks: { font: FONT },
+                            },
+                        },
+                    ),
+                );
+
+                // ── Humidity chart ────────────────────────────────────────────────────
+                charts.push(ktChartByName.hum =
+                    makeChart(
+                        "chart-hum",
+                        [
+                            {
+                                label: "Kiln RH %",
+                                data: rows.map((r, i) => ({ x: timestamps[i], y: num(r, "RH_used%") })),
+                                borderColor: "#60d0b0",
+                                backgroundColor: "rgba(96,208,176,0.1)",
+                                fill: true,
+                                tension: 0.3,
+                                pointRadius: rows.length > 48 ? 0 : 3,
+                                borderWidth: 2,
+                            },
+                            {
+                                label: "Outside RH %",
+                                data: rows.map((r, i) => ({ x: timestamps[i], y: num(r, "OutH%") })),
+                                borderColor: "#90d040",
+                                backgroundColor: "rgba(144,208,64,0.1)",
+                                fill: true,
+                                tension: 0.3,
+                                pointRadius: rows.length > 48 ? 0 : 3,
+                                borderWidth: 1.5,
+                            },
+                        ],
+                        {
+                            y: {
+                                min: 0, max: 100,
+                                title: { display: true, text: "RH %", font: FONT },
+                                grid: { color: "#2a2a2a" },
+                                ticks: { font: FONT },
+                            },
+                        },
+                    ),
+                );
+
+                // ── Battery / PV chart ────────────────────────────────────────────────
+                charts.push(ktChartByName.bat =
+                    makeChart(
+                        "chart-bat",
+                        [
+                            {
+                                label: "Battery Voltage",
+                                data: rows.map((r, i) => ({
+                                    x: timestamps[i],
+                                    y: num(r, "Bat_V"),
+                                })),
+                                borderColor: "#50d080",
+                                backgroundColor: "transparent",
+                                tension: 0.3,
+                                pointRadius: rows.length > 48 ? 0 : 3,
+                                borderWidth: 2,
+                                yAxisID: "yV",
+                            },
+                            {
+                                label: "Solar Voltage",
+                                data: rows.map((r, i) => ({
+                                    x: timestamps[i],
+                                    y: num(r, "PV_V"),
+                                })),
+                                borderColor: "#d0e050",
+                                backgroundColor: "transparent",
+                                tension: 0.3,
+                                pointRadius: rows.length > 48 ? 0 : 3,
+                                borderWidth: 1.5,
+                                yAxisID: "yV",
+                            },
+                            {
+                                label: "Charge %",
+                                data: rows.map((r, i) => ({
+                                    x: timestamps[i],
+                                    y: num(r, "Bat_SOC%"),
+                                })),
+                                borderColor: "#a0a0ff",
+                                borderDash: [5, 3],
+                                backgroundColor: "transparent",
+                                tension: 0.3,
+                                pointRadius: rows.length > 48 ? 0 : 3,
+                                borderWidth: 1.5,
+                                yAxisID: "ySOC",
+                            },
+                        ],
+                        {
+                            yV: {
+                                position: "left",
+                                title: {
+                                    display: true,
+                                    text: "Volts",
+                                    font: FONT,
+                                },
+                                grid: { color: "#2a2a2a" },
+                                ticks: { font: FONT },
+                            },
+                            ySOC: {
+                                position: "right",
+                                title: {
+                                    display: true,
+                                    text: "SOC %",
+                                    font: FONT,
+                                },
+                                min: 0,
+                                max: 100,
+                                grid: { drawOnChartArea: false },
+                                ticks: { font: FONT },
+                            },
+                        },
+                    ),
+                );
+
+                // ── Wick Health chart ─────────────────────────────────────────────────
+                // Shows wick-adjacent RH % (left axis) with good/failed threshold lines,
+                // and dew-point margin (right axis).
+                {
+                  const ptR = rows.length > 48 ? 0 : 3;
+                  charts.push(ktChartByName.wick =
+                    makeChart('chart-wick',
+                      [
+                        {
+                          label: 'Wick RH %',
+                          data: rows.map((r, i) => ({ x: timestamps[i], y: num(r, 'WickRH%') })),
+                          borderColor: '#50d0c0',
+                          backgroundColor: 'transparent',
+                          tension: 0.3,
+                          pointRadius: ptR,
+                          borderWidth: 2,
+                          yAxisID: 'yRH',
+                        },
+                        {
+                          label: 'Good threshold (88 %)',
+                          data: rows.map((r, i) => ({ x: timestamps[i], y: 88 })),
+                          borderColor: '#50c060',
+                          borderDash: [6, 3],
+                          backgroundColor: 'transparent',
+                          pointRadius: 0,
+                          borderWidth: 1,
+                          yAxisID: 'yRH',
+                        },
+                        {
+                          label: 'Failed threshold (70 %)',
+                          data: rows.map((r, i) => ({ x: timestamps[i], y: 70 })),
+                          borderColor: '#d04040',
+                          borderDash: [4, 3],
+                          backgroundColor: 'transparent',
+                          pointRadius: 0,
+                          borderWidth: 1,
+                          yAxisID: 'yRH',
+                        },
+                        {
+                          label: 'Dew Margin °C',
+                          data: rows.map((r, i) => ({ x: timestamps[i], y: num(r, 'DewMargin_C') })),
+                          borderColor: '#d09030',
+                          backgroundColor: 'transparent',
+                          tension: 0.3,
+                          pointRadius: ptR,
+                          borderWidth: 1.5,
+                          yAxisID: 'yDew',
+                        },
+                      ],
+                      {
+                        yRH: {
+                          position: 'left',
+                          min: 0, max: 100,
+                          title: { display: true, text: 'Wick RH %', font: FONT },
+                          grid: { color: '#2a2a2a' },
+                          ticks: { font: FONT },
+                        },
+                        yDew: {
+                          position: 'right',
+                          min: 0,
+                          title: { display: true, text: 'Dew Margin °C', font: FONT },
+                          grid: { drawOnChartArea: false },
+                          ticks: { font: FONT },
+                        },
+                      },
+                    ),
+                  );
+                  // Summary note: failed + anomaly counts
+                  const failedCount  = rows.filter(r => r['WickHealth'] === '3').length;
+                  const anomalyCount = rows.filter(r => r['Anomaly'] === '1').length;
+                  const parts = [];
+                  if (failedCount  > 0) parts.push(`${failedCount} reading${failedCount !== 1 ? 's' : ''} with wick failed`);
+                  if (anomalyCount > 0) parts.push(`${anomalyCount} anomalous reading${anomalyCount !== 1 ? 's' : ''}`);
+                  const wickNote = document.getElementById('kt-wick-note');
+                  if (wickNote) wickNote.textContent = parts.join(' · ');
+                }
+
+                // ── Outside RH vs. kiln EMC chart ────────────────────────────────────
+                // Two y-axes: EMC % on the left, RH % on the right.
+                // Shows whether outside conditions are actually favourable for drying
+                // when the fans run — a high outside RH means the fans are pushing in
+                // nearly-as-humid air and progress will be slow.
+                charts.push(ktChartByName.rhEmc =
+                    makeChart(
+                        "chart-rh-emc",
+                        [
+                            {
+                                label: "Kiln EMC %",
+                                data: rows.map((r, i) => ({
+                                    x: timestamps[i],
+                                    y: num(r, "EMC%"),
+                                })),
+                                borderColor: "#f0a030",
+                                backgroundColor: "transparent",
+                                tension: 0.3,
+                                pointRadius: rows.length > 48 ? 0 : 3,
+                                borderWidth: 2,
+                                yAxisID: "yEMC",
+                            },
+                            {
+                                label: "Est. EMC (dry bulb sensor only)",
+                                data: emcEstData,
+                                borderColor: "#9098d0",
+                                backgroundColor: "transparent",
+                                fill: false,
+                                tension: 0.3,
+                                pointRadius: 0,
+                                borderWidth: 1.5,
+                                borderDash: [4, 3],
+                                yAxisID: "yEMC",
+                            },
+                            {
+                                label: "Outside humidity %",
+                                data: rows.map((r, i) => ({
+                                    x: timestamps[i],
+                                    y: num(r, "OutH%"),
+                                })),
+                                borderColor: "#60a0e0",
+                                backgroundColor: "rgba(96,160,224,0.1)",
+                                fill: true,
+                                tension: 0.3,
+                                pointRadius: rows.length > 48 ? 0 : 3,
+                                borderWidth: 1.5,
+                                yAxisID: "yRH",
+                            },
+                        ],
+                        {
+                            yEMC: {
+                                position: "left",
+                                title: {
+                                    display: true,
+                                    text: "EMC %",
+                                    font: FONT,
+                                },
+                                grid: { color: "#2a2a2a" },
+                                ticks: { font: FONT },
+                            },
+                            yRH: {
+                                position: "right",
+                                title: {
+                                    display: true,
+                                    text: "Outside RH %",
+                                    font: FONT,
+                                },
+                                min: 0,
+                                max: 100,
+                                grid: { drawOnChartArea: false },
+                                ticks: { font: FONT },
+                            },
+                        },
+                    ),
+                );
+
+                // ── Temperature depression (dT) chart ────────────────────────────────
+                // dT = dry-bulb minus wet-bulb. A healthy wick shows a clear positive
+                // gap. A collapse toward zero while RH stays high means the wick needs
+                // re-wetting. A zero reference line makes this easy to spot.
+                charts.push(ktChartByName.dt =
+                    makeChart(
+                        "chart-dt",
+                        [
+                            {
+                                label: "Temp depression dT (°C)",
+                                data: rows.map((r, i) => ({
+                                    x: timestamps[i],
+                                    y: num(r, "dT_C"),
+                                })),
+                                borderColor: "#e080ff",
+                                backgroundColor: "rgba(224,128,255,0.12)",
+                                fill: true,
+                                tension: 0.3,
+                                pointRadius: rows.length > 48 ? 0 : 3,
+                                borderWidth: 2,
+                            },
+                            {
+                                label: "Zero reference",
+                                data: timestamps.map((t) => ({ x: t, y: 0 })),
+                                borderColor: "#e05050",
+                                borderDash: [4, 4],
+                                borderWidth: 1,
+                                pointRadius: 0,
+                                fill: false,
+                            },
+                        ],
+                        {
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: "°C",
+                                    font: FONT,
+                                },
+                                grid: { color: "#2a2a2a" },
+                                ticks: { font: FONT },
+                            },
+                        },
+                    ),
+                );
+
+                // ── Delta charts ──────────────────────────────────────────────────────
+                const deltaAxis = label => ({ y: {
+                    title: { display: true, text: label, font: FONT },
+                    grid: { color: '#2a2a2a' }, ticks: { font: FONT },
+                }});
+                const deltaTempData = rows.map((r, i) => {
+                    const tdb = num(r, 'Tdb_C'), outt = num(r, 'OutT_C');
+                    return { x: timestamps[i], y: (tdb !== null && outt !== null) ? +(tdb - outt).toFixed(2) : null };
+                });
+                const deltaHumData = rows.map((r, i) => {
+                    const rh = num(r, 'RH_used%'), outh = num(r, 'OutH%');
+                    return { x: timestamps[i], y: (rh !== null && outh !== null) ? +(rh - outh).toFixed(2) : null };
+                });
+                charts.push(ktChartByName.tempDelta = makeChart('chart-temp-delta', [{
+                    label: 'Temp Δ (Kiln − Outside) °C',
+                    data: deltaTempData,
+                    borderColor: '#f0c030',
+                    backgroundColor: ctx => {
+                        const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, ctx.chart.height);
+                        g.addColorStop(0, 'rgba(240,192,48,0.25)'); g.addColorStop(1, 'rgba(240,192,48,0)');
+                        return g;
+                    },
+                    fill: 'origin', tension: 0.3,
+                    pointRadius: rows.length > 48 ? 0 : 3, borderWidth: 2,
+                }], deltaAxis('°C')));
+                charts.push(ktChartByName.humDelta = makeChart('chart-hum-delta', [{
+                    label: 'Humidity Δ (Kiln − Outside) %',
+                    data: deltaHumData,
+                    borderColor: '#c060f0',
+                    backgroundColor: ctx => {
+                        const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, ctx.chart.height);
+                        g.addColorStop(0, 'rgba(192,96,240,0.25)'); g.addColorStop(1, 'rgba(192,96,240,0)');
+                        return g;
+                    },
+                    fill: 'origin', tension: 0.3,
+                    pointRadius: rows.length > 48 ? 0 : 3, borderWidth: 2,
+                }], deltaAxis('%')));
+
+                // ── Monthly averages chart ────────────────────────────────────────────
+                // Always uses full dataset — unaffected by the Readings date filter.
+                const mBuckets = Array.from({length: 12}, () => ({ tdb:[], outt:[], emc:[], rh:[], outh:[] }));
+                applyTimeWindowKT(gData.rows).forEach(r => {
+                    const m = new Date(r['UTC'] || 0).getUTCMonth();
+                    const tdb  = num(r, 'Tdb_C'),    outt = num(r, 'OutT_C');
+                    const emc  = num(r, 'EMC%'),      rh   = num(r, 'RH_used%');
+                    const outh = num(r, 'OutH%');
+                    if (tdb  !== null) mBuckets[m].tdb.push(tdb);
+                    if (outt !== null) mBuckets[m].outt.push(outt);
+                    if (emc  !== null) mBuckets[m].emc.push(emc);
+                    if (rh   !== null) mBuckets[m].rh.push(rh);
+                    if (outh !== null) mBuckets[m].outh.push(outh);
+                });
+                const mTdb  = mBuckets.map(b => mAvg(b.tdb));
+                const mOutt = mBuckets.map(b => mAvg(b.outt));
+                const mEmc  = mBuckets.map(b => mAvg(b.emc));
+                const mRh   = mBuckets.map(b => mAvg(b.rh));
+                const mOutH = mBuckets.map(b => mAvg(b.outh));
+                const mDT   = mTdb.map((v, i)  => (v !== null && mOutt[i] !== null) ? +(v - mOutt[i]).toFixed(2) : null);
+                const mDH   = mRh.map((v, i)   => (v !== null && mOutH[i] !== null) ? +(v - mOutH[i]).toFixed(2) : null);
+                const ktMLine = (label, data, color, yAxisID, dash = []) => ({
+                    type: 'line', label, data, yAxisID,
+                    borderColor: color, backgroundColor: 'transparent',
+                    borderWidth: 2, borderDash: dash,
+                    pointRadius: 4, pointHoverRadius: 6, tension: 0.3,
+                });
+                const mCtx = document.getElementById('chart-monthly').getContext('2d');
+                charts.push(new Chart(mCtx, {
+                    type: 'line',
+                    data: {
+                        labels: MONTHS,
+                        datasets: [
+                            ktMLine('Kiln Temp °C',    mTdb,  '#30b0f0', 'yT'),
+                            ktMLine('Outside Temp °C', mOutt, '#f08030', 'yT'),
+                            ktMLine('Temp Δ °C',       mDT,   '#f0c030', 'yT', [4, 3]),
+                            ktMLine('Kiln RH %',       mRh,   '#60d0b0', 'yH'),
+                            ktMLine('Outside RH %',    mOutH, '#90d040', 'yH'),
+                            ktMLine('Humidity Δ %',    mDH,   '#c060f0', 'yH', [4, 3]),
+                            ktMLine('EMC %',           mEmc,  '#f0a030', 'yH', [2, 2]),
+                        ],
+                    },
+                    options: {
+                        animation: false,
+                        responsive: true,
+                        interaction: { mode: 'index', intersect: false },
+                        plugins: {
+                            legend: { labels: { font: FONT, boxWidth: 12, padding: 14 } },
+                            tooltip: { font: FONT },
+                        },
+                        scales: {
+                            x: { ticks: { font: FONT }, grid: { color: '#2a2a2a' } },
+                            yT: { type: 'linear', position: 'left',  title: { display: true, text: '°C', font: FONT }, ticks: { font: FONT }, grid: { color: '#2a2a2a' } },
+                            yH: { type: 'linear', position: 'right', title: { display: true, text: '%',  font: FONT }, ticks: { font: FONT }, grid: { drawOnChartArea: false } },
+                        },
+                    },
+                }));
+                ktChartByName.monthly = charts[charts.length - 1];
+
+                // ── Raw data table ────────────────────────────────────────────────────
+                const thead = document.getElementById("table-head");
+                const tbody = document.getElementById("table-body");
+                thead.innerHTML = `<tr>${headers.map((h) => `<th>${h}</th>`).join("")}</tr>`;
+                tbody.innerHTML = rows
+                    .slice()
+                    .reverse()
+                    .map(
+                        (r) =>
+                            `<tr>${headers.map((h) => `<td>${r[h] ?? ""}</td>`).join("")}</tr>`,
+                    )
+                    .join("");
+
+                ktChartsReady = true;
+            }
+
+            // ── Global dataset (preserved for filtering) ───────────────────────────────
+            let gData = null; // { headers, rows }
+
+            // ── Date range modal ───────────────────────────────────────────────────────
+            let ktModalMode = 'range';
+
+            function switchKTModalMode(mode) {
+                ktModalMode = mode;
+                document.getElementById('kt-tab-range').classList.toggle('active', mode === 'range');
+                document.getElementById('kt-tab-month').classList.toggle('active', mode === 'month');
+                document.getElementById('kt-modal-date-section').style.display  = mode === 'range' ? 'flex' : 'none';
+                document.getElementById('kt-modal-month-section').style.display = mode === 'month' ? 'flex' : 'none';
+            }
+
+            function openModal() {
+                if (!gData) return;
+
+                function toLocalInput(utcStr) { return (utcStr || "").slice(0, 16); }
+                const utcTimes = gData.rows.map(r => r["UTC"] || "").filter(Boolean).sort();
+                const fromEl = document.getElementById("date-from");
+                const toEl   = document.getElementById("date-to");
+                if (!fromEl.value) fromEl.value = toLocalInput(utcTimes[0]);
+                if (!toEl.value)   toEl.value   = toLocalInput(utcTimes[utcTimes.length - 1]);
+                document.getElementById("modal-range-hint").textContent =
+                    utcTimes.length ? `Data spans ${toLocalInput(utcTimes[0])} → ${toLocalInput(utcTimes[utcTimes.length - 1])} UTC` : "";
+
+                // Populate year dropdown from actual data
+                const years = [...new Set(utcTimes.map(t => t.slice(0, 4)))].sort();
+                const yearSel = document.getElementById('kt-filter-year');
+                const prevYear = yearSel.value;
+                yearSel.innerHTML = years.map(y => `<option value="${y}">${y}</option>`).join('');
+                if (prevYear && years.includes(prevYear)) yearSel.value = prevYear;
+
+                // Default month/year to current date if within data, else latest
+                if (!yearSel.dataset.set) {
+                    const now = new Date();
+                    const nowYear = String(now.getUTCFullYear());
+                    yearSel.value = years.includes(nowYear) ? nowYear : years[years.length - 1];
+                    document.getElementById('kt-filter-month').value = now.getUTCMonth();
+                    yearSel.dataset.set = '1';
+                }
+
+                document.getElementById("modal-overlay").classList.add("open");
+            }
+
+            function closeModal() {
+                document.getElementById("modal-overlay").classList.remove("open");
+            }
+
+            function applyFilter() {
+                if (!gData) return;
+                let filtered;
+                if (ktModalMode === 'month') {
+                    const month = parseInt(document.getElementById('kt-filter-month').value);
+                    const year  = document.getElementById('kt-filter-year').value;
+                    filtered = gData.rows.filter(r => {
+                        const utc = r["UTC"] || "";
+                        return utc.slice(0, 4) === year && new Date(utc).getUTCMonth() === month;
+                    });
+                } else {
+                    const from = document.getElementById("date-from").value;
+                    const to   = document.getElementById("date-to").value;
+                    filtered = gData.rows.filter(r => {
+                        const t = (r["UTC"] || "").slice(0, 16);
+                        return (!from || t >= from) && (!to || t <= to);
+                    });
+                }
+                closeModal();
+                showLoading(true, 'Rendering charts…');
+                setTimeout(() => {
+                    render({ headers: gData.headers, rows: filtered });
+                    const isFiltered = filtered.length < gData.rows.length;
+                    document.getElementById("readings-card").classList.toggle("filtered", isFiltered);
+                    showLoading(false);
+                }, 0);
+            }
+
+            function clearFilter() {
+                document.getElementById("date-from").value = "";
+                document.getElementById("date-to").value = "";
+                delete document.getElementById('kt-filter-year').dataset.set;
+                switchKTModalMode('range');
+                closeModal();
+                if (gData) {
+                    showLoading(true, 'Rendering charts…');
+                    setTimeout(() => { render(gData); showLoading(false); }, 0);
+                }
+                document.getElementById("readings-card").classList.remove("filtered");
+            }
+
+            // Close modal on overlay click
+            document
+                .getElementById("modal-overlay")
+                .addEventListener("click", (e) => {
+                    if (e.target === document.getElementById("modal-overlay"))
+                        closeModal();
+                });
+
+            // ── Loading indicator ──────────────────────────────────────────────────────
+            function showLoading(on, msg) {
+                const el = document.getElementById('loading-overlay');
+                if (msg) document.getElementById('loading-msg').textContent = msg;
+                if (on) {
+                    el.classList.add('active');
+                } else {
+                    // Wait two animation frames so the browser finishes painting
+                    // charts before the overlay disappears.
+                    requestAnimationFrame(() => requestAnimationFrame(() => el.classList.remove('active')));
+                }
+            }
+
+            // ── File loading ───────────────────────────────────────────────────────────
+            function loadFile(file) {
+                if (!file) return;
+                showLoading(true, 'Loading CSV…');
+                const reader = new FileReader();
+                reader.onload = e => {
+                    setTimeout(() => {
+                        try {
+                            const parsed = parseCSV(e.target.result);
+                            const fmt = detectCSVFormat(parsed.headers);
+                            const banner = document.getElementById('kt-error-banner');
+                            if (fmt === 'sensorpush') {
+                                banner.textContent = `"${file.name}" looks like a SensorPush CSV — switch to the SensorPush tab to view it.`;
+                                banner.style.display = 'block';
+                                showLoading(false);
+                                return;
+                            }
+                            if (fmt !== 'kilntroller') {
+                                banner.textContent = `"${file.name}" doesn't look like a Kilntroller CSV. Expected a "UTC" column and EMC data.`;
+                                banner.style.display = 'block';
+                                showLoading(false);
+                                return;
+                            }
+                            const requiredCols = ['UTC', 'EMC%', 'Tdb_C', 'Twb_C', 'RH_used%'];
+                            const missing = requiredCols.filter(c => !parsed.headers.includes(c));
+                            if (missing.length > 0) {
+                                banner.textContent = 'Missing required columns: ' + missing.join(', ');
+                                banner.style.display = 'block';
+                                showLoading(false);
+                                return;
+                            }
+                            banner.style.display = 'none';
+                            document.getElementById('kt-reload-btn').style.display = '';
+                            gData = parsed;
+                            document.getElementById('readings-card').classList.remove('filtered');
+                            document.getElementById('date-from').value = '';
+                            document.getElementById('date-to').value = '';
+                            delete document.getElementById('kt-filter-year').dataset.set;
+                            switchKTModalMode('range');
+                            render(gData);
+                            showLoading(false);
+                        } catch (err) {
+                            showLoading(false);
+                            const banner = document.getElementById('kt-error-banner');
+                            banner.textContent = 'Failed to read file: ' + err.message;
+                            banner.style.display = 'block';
+                        }
+                    }, 0);
+                };
+                reader.onerror = () => {
+                    showLoading(false);
+                    const banner = document.getElementById('kt-error-banner');
+                    banner.textContent = 'Could not read the file. Please try again.';
+                    banner.style.display = 'block';
+                };
+                reader.readAsText(file);
+            }
+
+            document
+                .getElementById("file-input")
+                .addEventListener("change", (e) => loadFile(e.target.files[0]));
+
+            // Drag-and-drop on the whole page — KT tab only
+            const dropZone = document.getElementById("drop-zone");
+            document.addEventListener("dragover", (e) => {
+                e.preventDefault();
+                const hint = document.getElementById('drag-tab-hint');
+                if (activeTab === 'kt') {
+                    dropZone.classList.add("drag-over");
+                    if (hint) hint.style.display = 'none';
+                } else {
+                    if (hint) {
+                        hint.textContent = 'Switch to the Kilntroller tab to load this file';
+                        hint.style.display = 'block';
+                    }
+                }
+            });
+            document.addEventListener("dragleave", (e) => {
+                if (!e.relatedTarget) {
+                    dropZone.classList.remove("drag-over");
+                    const hint = document.getElementById('drag-tab-hint');
+                    if (hint) hint.style.display = 'none';
+                }
+            });
+            document.addEventListener("drop", (e) => {
+                e.preventDefault();
+                dropZone.classList.remove("drag-over");
+                const hint = document.getElementById('drag-tab-hint');
+                if (hint) hint.style.display = 'none';
+                if (activeTab === 'kt') loadFile(e.dataTransfer.files[0]);
+            });
+
+            // ── CSV format detection ───────────────────────────────────────────────────
+            function detectCSVFormat(headers) {
+              const h = headers.map(x => x.replace(/"/g, ''));
+              if (h.includes('UTC') && h.some(x => x.includes('EMC'))) return 'kilntroller';
+              const hasTime = h.some(x => /time/i.test(x));
+              const hasTemp = h.some(x => /temperature/i.test(x));
+              const hasHum  = h.some(x => /humidity/i.test(x));
+              if (hasTime && hasTemp && hasHum) return 'sensorpush';
+              return 'unknown';
+            }
+
+            // ── Tab switching ─────────────────────────────────────────────────────────
+            let activeTab = 'kt';
+            function showTab(tab) {
+              activeTab = tab;
+              document.getElementById('kt-error-banner').style.display = 'none';
+              document.getElementById('sp-error-banner').style.display = 'none';
+              document.getElementById('kt-view').style.display  = tab === 'kt' ? '' : 'none';
+              document.getElementById('sp-view').style.display  = tab === 'sp' ? '' : 'none';
+              document.getElementById('tab-kt').classList.toggle('active', tab === 'kt');
+              document.getElementById('tab-sp').classList.toggle('active', tab === 'sp');
+              // Reload buttons: show only when on the matching tab AND content is already loaded
+              const ktLoaded = document.getElementById('content').style.display !== 'none';
+              const spLoaded = document.getElementById('sp-content').style.display !== 'none';
+              document.getElementById('kt-reload-btn').style.display = (tab === 'kt' && ktLoaded) ? '' : 'none';
+              document.getElementById('sp-reload-btn').style.display = (tab === 'sp' && spLoaded) ? '' : 'none';
+              requestAnimationFrame(() => {
+                if (tab === 'kt') charts.forEach(c => c.resize());
+                else spCharts.forEach(c => c.resize());
+              });
+            }
+
+            // ── SensorPush state ──────────────────────────────────────────────────────
+            const SP_TS = '__ts__';
+            let spInside = null, spOutside = null, spGlobal = null, spHasOutside = false;
+            let spCharts = [];
+            let spMonthlyChart = null, spMonthlyData = null;
+
+            // ── Time window filter state (independent per tab) ────────────────────────
+            let ktFilterMode   = 'all'; // 'all' | 'day' | 'night'
+            let ktDayStartHour = 6;
+            let ktDayEndHour   = 18;
+            let spFilterMode   = 'all';
+            let spDayStartHour = 6;
+            let spDayEndHour   = 18;
+            let ktBaseRows   = null;  // pre-time-window KT rows (post date-filter)
+            let spBaseIRows  = null;  // pre-time-window SP inside rows
+            let spBaseORows  = null;  // pre-time-window SP outside rows
+
+            function parseSPTime(str) {
+              if (!str) return NaN;
+              str = str.trim().replace(/"/g, '');
+              str = str.replace(' +0000', 'Z').replace(' +00:00', 'Z').replace(/ UTC$/i, 'Z');
+              str = str.replace(/^(\d{4}-\d{2}-\d{2}) (\d{2}:\d{2}:\d{2})/, '$1T$2');
+              if (!/Z|[+-]\d{2}:\d{2}$/.test(str)) str += 'Z';
+              const t = new Date(str).getTime();
+              return isNaN(t) ? NaN : t;
+            }
+
+            // Hailwood-Horrobin EMC — same constants as kilntroller firmware
+            function emcHH(tempC, rhPct) {
+              if (tempC === null || rhPct === null) return null;
+              const T = tempC * 9 / 5 + 32;        // °C → °F
+              const H = rhPct / 100;
+              if (H <= 0 || H >= 1) return null;
+              const W  = 330.0 + 0.452*T + 0.00415*T*T;
+              const K  = 0.791 + 0.000463*T - 0.000000844*T*T;
+              const K1 = 6.34  + 0.000775*T - 0.0000935*T*T;
+              const K2 = 1.09  + 0.0284*T   - 0.0000904*T*T;
+              const KH = K * H, KH2 = KH * KH;  // (K·h)² as required by the Hailwood-Horrobin formula
+              const term1 = KH / (1 - KH);
+              const term2 = (K1*KH + 2*K1*K2*KH2) / (1 + K1*KH + K1*K2*KH2);
+              return (1800 / W) * (term1 + term2);
+            }
+
+            function getSPTempC(row, data) {
+              const v = parseFloat(row[data.tempCol]);
+              if (isNaN(v)) return null;
+              return data.isFahr ? (v - 32) * 5 / 9 : v;
+            }
+
+            function getSPHum(row, data) {
+              const v = parseFloat(row[data.humCol]);
+              return isNaN(v) ? null : v;
+            }
+
+            function isDaytime(tsMs, startHour, endHour) {
+              const h = new Date(tsMs).getUTCHours();
+              if (endHour > startHour) return h >= startHour && h < endHour;
+              return h >= startHour || h < endHour; // midnight-wrap
+            }
+
+            function applyTimeWindowKT(rows) {
+              if (ktFilterMode === 'all') return rows;
+              return rows.filter(r => {
+                const inDay = isDaytime(new Date(r['UTC'] || 0).getTime(), ktDayStartHour, ktDayEndHour);
+                return ktFilterMode === 'day' ? inDay : !inDay;
+              });
+            }
+
+            function applyTimeWindowSP(rows) {
+              if (spFilterMode === 'all') return rows;
+              return rows.filter(r => {
+                const inDay = isDaytime(r[SP_TS], spDayStartHour, spDayEndHour);
+                return spFilterMode === 'day' ? inDay : !inDay;
+              });
+            }
+
+            function reRender(tab) {
+              if (tab !== 'sp' && ktBaseRows !== null) {
+                const rows = applyTimeWindowKT(ktBaseRows);
+                const ktEmptyMsg = document.getElementById('kt-empty-msg');
+                if (rows.length === 0) {
+                  if (ktEmptyMsg) ktEmptyMsg.style.display = 'block';
+                  return;
+                }
+                if (ktEmptyMsg) ktEmptyMsg.style.display = 'none';
+                if (ktChartsReady) {
+                  refreshKTData(rows);
+                } else if (gData) {
+                  showLoading(true, 'Rendering charts…');
+                  setTimeout(() => { render({ headers: gData.headers, rows: ktBaseRows }); showLoading(false); }, 0);
+                }
+              }
+              if (tab !== 'kt' && spBaseIRows !== null) {
+                const iRows = applyTimeWindowSP(spBaseIRows);
+                const oRows = applyTimeWindowSP(spBaseORows || []);
+                const spEmptyMsg = document.getElementById('sp-empty-msg');
+                if (iRows.length === 0) {
+                  if (spEmptyMsg) spEmptyMsg.style.display = 'block';
+                  return;
+                }
+                if (spEmptyMsg) spEmptyMsg.style.display = 'none';
+                if (spChartsReady) {
+                  refreshSPData(iRows, oRows);
+                } else {
+                  showLoading(true, 'Rendering charts…');
+                  setTimeout(() => { renderSP(spBaseIRows, spBaseORows || []); showLoading(false); }, 0);
+                }
+              }
+            }
+
+            function setTimeFilter(tab, mode) {
+              if (tab === 'kt') ktFilterMode = mode;
+              else spFilterMode = mode;
+              const l1 = mode === 'night' ? 'Night end'   : 'Day start';
+              const l2 = mode === 'night' ? 'Night start' : 'Day end';
+              ['all', 'day', 'night'].forEach(m => {
+                const btn = document.querySelector(`#${tab}-tw-card [data-tw-mode="${m}"]`);
+                if (btn) btn.classList.toggle('active', m === mode);
+              });
+              const hours = document.querySelector(`#${tab}-tw-card .tw-hours`);
+              if (hours) {
+                hours.style.display = mode === 'all' ? 'none' : '';
+                hours.classList.toggle('night-order', mode === 'night');
+              }
+              const s1 = document.getElementById(`${tab}-tw-l1`);
+              const s2 = document.getElementById(`${tab}-tw-l2`);
+              if (s1) s1.textContent = l1;
+              if (s2) s2.textContent = l2;
+              if (mode === 'all') {
+                const hint = document.getElementById(`${tab}-tw-hint`);
+                if (hint) hint.style.display = 'none';
+              }
+              reRender(tab);
+            }
+
+            function setDayHours(tab, startVal, endVal) {
+              const start = Math.max(0, Math.min(23, parseInt(startVal) || 0));
+              const end   = Math.max(1, Math.min(24, parseInt(endVal)   || 24));
+              const hint = document.getElementById(`${tab}-tw-hint`);
+              if (start >= end) {
+                if (hint) { hint.textContent = 'Start must be before end.'; hint.style.display = 'block'; }
+                return;
+              }
+              if (hint) hint.style.display = 'none';
+              if (tab === 'kt') { ktDayStartHour = start; ktDayEndHour = end; }
+              else              { spDayStartHour = start; spDayEndHour = end; }
+              const s = document.getElementById(`${tab}-day-start`);
+              const e = document.getElementById(`${tab}-day-end`);
+              if (s) s.value = start;
+              if (e) e.value = end;
+              const mode = tab === 'kt' ? ktFilterMode : spFilterMode;
+              if (mode !== 'all') {
+                clearTimeout(twDebounceTimer);
+                twDebounceTimer = setTimeout(() => reRender(tab), 300);
+              }
+            }
+
+            function spAvg(rows, valFn, pred) {
+              const vals = rows.filter(pred).map(valFn).filter(v => v !== null && !isNaN(v));
+              return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
+            }
+
+            function loadSPFile(file, slot) {
+              if (!file) return;
+              showLoading(true, 'Loading SensorPush CSV…');
+              const reader = new FileReader();
+              reader.onload = e => {
+                setTimeout(() => {
+                  try {
+                    const parsed = parseCSV(e.target.result);
+                    const fmt = detectCSVFormat(parsed.headers);
+                    const banner = document.getElementById('sp-error-banner');
+
+                    if (fmt === 'kilntroller') {
+                      banner.textContent = `"${file.name}" looks like a Kilntroller CSV — switch to the Kilntroller tab to view it.`;
+                      banner.style.display = 'block';
+                      showLoading(false);
+                      return;
+                    }
+                    if (fmt !== 'sensorpush') {
+                      banner.textContent = `"${file.name}" doesn't match SensorPush format. Expected columns: Time, Temperature (…), Humidity (%).`;
+                      banner.style.display = 'block';
+                      showLoading(false);
+                      return;
+                    }
+                    banner.style.display = 'none';
+
+                    const tempCol = parsed.headers.find(h => /temperature/i.test(h));
+                    const humCol  = parsed.headers.find(h => /humidity/i.test(h));
+                    if (!tempCol || !humCol) {
+                      banner.textContent = 'Could not find required Temperature or Humidity columns in this file.';
+                      banner.style.display = 'block';
+                      showLoading(false);
+                      return;
+                    }
+                    const timeCol = parsed.headers.find(h => /time/i.test(h));
+                    const isFahr  = /°f|fahrenheit|\(f\)/i.test(tempCol);
+
+                    parsed.rows.forEach(r => { r[SP_TS] = parseSPTime(r[timeCol]); });
+                    parsed.rows = parsed.rows.filter(r => !isNaN(r[SP_TS]));
+                    parsed.rows.sort((a, b) => a[SP_TS] - b[SP_TS]);
+
+                    const data = { ...parsed, tempCol, humCol, timeCol, isFahr, filename: file.name };
+
+                    if (slot === 'inside') {
+                      spInside = data;
+                      document.getElementById('sp-inside-status').textContent = '✓ ' + file.name;
+                      document.getElementById('sp-slot-inside').classList.add('loaded');
+                    } else {
+                      spOutside = data;
+                      document.getElementById('sp-outside-status').textContent = '✓ ' + file.name;
+                      document.getElementById('sp-slot-outside').classList.add('loaded');
+                    }
+
+                    if (spInside && spOutside) {
+                      spGlobal = true;
+                      document.getElementById('sp-continue-bar').style.display = 'none';
+                      document.getElementById('sp-upload-zone').style.display = 'none';
+                      showLoading(true, 'Rendering charts…');
+                      setTimeout(() => {
+                        renderSP(spInside.rows, spOutside.rows);
+                        showLoading(false);
+                      }, 0);
+                    } else {
+                      if (spInside && !spOutside) {
+                        document.getElementById('sp-continue-bar').style.display = 'block';
+                      }
+                      showLoading(false);
+                    }
+                  } catch (err) {
+                    showLoading(false);
+                    const banner = document.getElementById('sp-error-banner');
+                    banner.textContent = 'Failed to read file: ' + err.message;
+                    banner.style.display = 'block';
+                  }
+                }, 0);
+              };
+              reader.onerror = () => {
+                showLoading(false);
+                const banner = document.getElementById('sp-error-banner');
+                banner.textContent = 'Could not read the file. Please try again.';
+                banner.style.display = 'block';
+              };
+              reader.readAsText(file);
+            }
+
+            function continueWithInsideOnly() {
+              spGlobal = true;
+              document.getElementById('sp-continue-bar').style.display = 'none';
+              document.getElementById('sp-upload-zone').style.display = 'none';
+              showLoading(true, 'Rendering charts…');
+              setTimeout(() => {
+                renderSP(spInside.rows, []);
+                showLoading(false);
+              }, 0);
+            }
+
+            function renderSP(iRows, oRows) {
+              // Store base rows (date-filtered but pre-time-window) for reRender()
+              spBaseIRows = iRows;
+              spBaseORows = oRows || [];
+              iRows = applyTimeWindowSP(iRows);
+              oRows = applyTimeWindowSP(spBaseORows);
+
+              spCharts.forEach(c => c.destroy());
+              spCharts = [];
+              spChartByName = {};
+              spChartsReady = false;
+
+              const hasOutside = oRows && oRows.length > 0;
+              spHasOutside = hasOutside;
+
+              // Show content before creating charts so canvases have correct dimensions
+              document.getElementById('sp-content').style.display = 'block';
+              const spEmptyMsgEl = document.getElementById('sp-empty-msg');
+              if (spEmptyMsgEl) spEmptyMsgEl.style.display = 'none';
+              resetSPChartVis(hasOutside);
+
+              updateSPCards(iRows, oRows);
+
+              // Temperature chart
+              const dots = n => n > 120 ? 0 : 3;
+              spCharts.push(spChartByName.temp = makeChart('sp-chart-temp', [
+                {
+                  label: 'Kiln (°C)',
+                  data: iRows.map(r => ({ x: r[SP_TS], y: getSPTempC(r, spInside) })),
+                  borderColor: '#30b0f0', backgroundColor: 'transparent',
+                  tension: 0.3, pointRadius: dots(iRows.length), borderWidth: 2,
+                },
+                ...(hasOutside ? [{
+                  label: 'Outside (°C)',
+                  data: oRows.map(r => ({ x: r[SP_TS], y: getSPTempC(r, spOutside) })),
+                  borderColor: '#f08030', backgroundColor: 'transparent',
+                  tension: 0.3, pointRadius: dots(oRows.length), borderWidth: 1.5,
+                }] : []),
+              ], { y: { title: { display: true, text: '°C', font: FONT }, grid: { color: '#2a2a2a' }, ticks: { font: FONT } } }));
+
+              // Humidity chart
+              spCharts.push(spChartByName.hum = makeChart('sp-chart-hum', [
+                {
+                  label: 'Kiln RH %',
+                  data: iRows.map(r => ({ x: r[SP_TS], y: getSPHum(r, spInside) })),
+                  borderColor: '#60d0b0', backgroundColor: 'rgba(96,208,176,0.1)',
+                  fill: true, tension: 0.3, pointRadius: dots(iRows.length), borderWidth: 2,
+                },
+                ...(hasOutside ? [{
+                  label: 'Outside RH %',
+                  data: oRows.map(r => ({ x: r[SP_TS], y: getSPHum(r, spOutside) })),
+                  borderColor: '#90d040', backgroundColor: 'rgba(144,208,64,0.1)',
+                  fill: true, tension: 0.3, pointRadius: dots(oRows.length), borderWidth: 1.5,
+                }] : []),
+              ], { y: { min: 0, max: 100, title: { display: true, text: 'RH %', font: FONT }, grid: { color: '#2a2a2a' }, ticks: { font: FONT } } }));
+
+              // Estimated EMC chart
+              spCharts.push(spChartByName.emc = makeChart('sp-chart-emc', [
+                {
+                  label: 'Kiln EMC % (est.)',
+                  data: iRows.map(r => {
+                    const t = getSPTempC(r, spInside), h = getSPHum(r, spInside);
+                    const emc = emcHH(t, h);
+                    return emc !== null ? { x: r[SP_TS], y: +emc.toFixed(2) } : { x: r[SP_TS], y: null };
+                  }),
+                  borderColor: '#e05050', backgroundColor: 'transparent',
+                  tension: 0.3, pointRadius: dots(iRows.length), borderWidth: 2,
+                },
+              ], { y: { title: { display: true, text: 'EMC %', font: FONT }, grid: { color: '#2a2a2a' }, ticks: { font: FONT } } }));
+
+              // Delta charts — detect sampling interval from data, then nearest-neighbour match
+              if (hasOutside) {
+              const medianInterval = rows => {
+                if (rows.length < 2) return 30 * 60 * 1000;
+                const diffs = [];
+                for (let i = 1; i < rows.length; i++) {
+                  const d = rows[i][SP_TS] - rows[i - 1][SP_TS];
+                  if (d > 0) diffs.push(d);
+                }
+                if (!diffs.length) return 30 * 60 * 1000;
+                diffs.sort((a, b) => a - b);
+                return diffs[Math.floor(diffs.length / 2)];
+              };
+
+              const tolerance = Math.max(medianInterval(iRows), medianInterval(oRows)) / 2;
+
+              // Build a sorted lookup from outside rows (already sorted)
+              const oLookup = oRows.map(r => ({
+                ts: r[SP_TS],
+                temp: getSPTempC(r, spOutside),
+                hum:  getSPHum(r, spOutside),
+              }));
+
+              const nearestOutside = ts => {
+                let lo = 0, hi = oLookup.length - 1;
+                while (lo < hi) {
+                  const mid = (lo + hi) >> 1;
+                  if (oLookup[mid].ts < ts) lo = mid + 1; else hi = mid;
+                }
+                const best = (lo > 0 && Math.abs(oLookup[lo - 1].ts - ts) < Math.abs(oLookup[lo].ts - ts))
+                  ? oLookup[lo - 1] : oLookup[lo];
+                return Math.abs(best.ts - ts) <= tolerance ? best : null;
+              };
+
+              const deltaTempData = iRows.flatMap(r => {
+                const iT = getSPTempC(r, spInside), match = nearestOutside(r[SP_TS]);
+                return (iT !== null && match?.temp !== null && match?.temp != null)
+                  ? [{ x: r[SP_TS], y: +(iT - match.temp).toFixed(2) }] : [];
+              });
+              const deltaHumData = iRows.flatMap(r => {
+                const iH = getSPHum(r, spInside), match = nearestOutside(r[SP_TS]);
+                return (iH !== null && match?.hum !== null && match?.hum != null)
+                  ? [{ x: r[SP_TS], y: +(iH - match.hum).toFixed(2) }] : [];
+              });
+              const deltaAxis = (label, extra = {}) => ({ y: {
+                title: { display: true, text: label, font: FONT },
+                grid: { color: '#2a2a2a' },
+                ticks: { font: FONT },
+                ...extra,
+              }});
+
+              spCharts.push(spChartByName.tempDelta = makeChart('sp-chart-temp-delta', [
+                {
+                  label: 'Temp Δ (Inside − Outside) °C',
+                  data: deltaTempData,
+                  borderColor: '#f0c030', backgroundColor: ctx => {
+                    const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, ctx.chart.height);
+                    g.addColorStop(0, 'rgba(240,192,48,0.25)'); g.addColorStop(1, 'rgba(240,192,48,0)');
+                    return g;
+                  },
+                  fill: 'origin', tension: 0.3, pointRadius: dots(deltaTempData.length), borderWidth: 2,
+                },
+              ], deltaAxis('°C')));
+
+              spCharts.push(spChartByName.humDelta = makeChart('sp-chart-hum-delta', [
+                {
+                  label: 'Humidity Δ (Inside − Outside) %',
+                  data: deltaHumData,
+                  borderColor: '#c060f0', backgroundColor: ctx => {
+                    const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, ctx.chart.height);
+                    g.addColorStop(0, 'rgba(192,96,240,0.25)'); g.addColorStop(1, 'rgba(192,96,240,0)');
+                    return g;
+                  },
+                  fill: 'origin', tension: 0.3, pointRadius: dots(deltaHumData.length), borderWidth: 2,
+                },
+              ], deltaAxis('RH %')));
+              } // end if (hasOutside)
+
+              // Monthly averages — always uses full dataset, unaffected by Readings date filter
+              const mkB = () => Array.from({length: 12}, () => ({ iT:[], oT:[], iH:[], oH:[] }));
+              const bAll = mkB();
+              applyTimeWindowSP(spInside.rows).forEach(r => {
+                const m = new Date(r[SP_TS]).getUTCMonth();
+                const t = getSPTempC(r, spInside), h = getSPHum(r, spInside);
+                if (t !== null) bAll[m].iT.push(t);
+                if (h !== null) bAll[m].iH.push(h);
+              });
+              if (hasOutside) {
+                applyTimeWindowSP(spOutside.rows).forEach(r => {
+                  const m = new Date(r[SP_TS]).getUTCMonth();
+                  const t = getSPTempC(r, spOutside), h = getSPHum(r, spOutside);
+                  if (t !== null) bAll[m].oT.push(t);
+                  if (h !== null) bAll[m].oH.push(h);
+                });
+              }
+
+              const buildM = buckets => {
+                const mIT = buckets.map(b => mAvg(b.iT));
+                const mOT = buckets.map(b => mAvg(b.oT));
+                const mIH = buckets.map(b => mAvg(b.iH));
+                const mOH = buckets.map(b => mAvg(b.oH));
+                const mDT = mIT.map((v,i) => (v !== null && mOT[i] !== null) ? +(v - mOT[i]).toFixed(2) : null);
+                const mDH = mIH.map((v,i) => (v !== null && mOH[i] !== null) ? +(v - mOH[i]).toFixed(2) : null);
+                return [mIT, mOT, mDT, mIH, mOH, mDH];
+              };
+              spMonthlyData = buildM(bAll);
+
+              const mLine = (label, data, color, yAxisID, dash = []) => ({
+                type: 'line', label, data, yAxisID,
+                borderColor: color, backgroundColor: 'transparent',
+                borderWidth: 2, borderDash: dash,
+                pointRadius: 4, pointHoverRadius: 6, tension: 0.3,
+              });
+
+              const initD = spMonthlyData;
+              const mCtx = document.getElementById('sp-chart-monthly').getContext('2d');
+              spMonthlyChart = new Chart(mCtx, {
+                type: 'line',
+                data: {
+                  labels: MONTHS,
+                  datasets: [
+                    mLine('Kiln Temp °C',         initD[0], '#30b0f0', 'yT'),
+                    { ...mLine('Outside Temp °C',       initD[1], '#f08030', 'yT'),            hidden: !hasOutside },
+                    { ...mLine('Temp Δ (In−Out) °C',    initD[2], '#f0c030', 'yT', [4, 3]),   hidden: !hasOutside },
+                    mLine('Kiln RH %',             initD[3], '#60d0b0', 'yH'),
+                    { ...mLine('Outside RH %',          initD[4], '#90d040', 'yH'),            hidden: !hasOutside },
+                    { ...mLine('Humidity Δ (In−Out) %', initD[5], '#c060f0', 'yH', [4, 3]),   hidden: !hasOutside },
+                  ],
+                },
+                options: {
+                  animation: false,
+                  responsive: true,
+                  interaction: { mode: 'index', intersect: false },
+                  plugins: {
+                    legend: { labels: { font: FONT, boxWidth: 12, padding: 14 } },
+                    tooltip: { font: FONT },
+                  },
+                  scales: {
+                    x: { ticks: { font: FONT }, grid: { color: '#2a2a2a' } },
+                    yT: { type: 'linear', position: 'left',  title: { display: true, text: '°C',   font: FONT }, ticks: { font: FONT }, grid: { color: '#2a2a2a' } },
+                    yH: { type: 'linear', position: 'right', title: { display: true, text: 'RH %', font: FONT }, ticks: { font: FONT }, grid: { drawOnChartArea: false } },
+                  },
+                },
+              });
+              spCharts.push(spMonthlyChart);
+              spChartByName.monthly = spMonthlyChart;
+
+              // Raw data table — merged side-by-side, newest first
+              const thead = document.getElementById('sp-table-head');
+              const tbody = document.getElementById('sp-table-body');
+              const iRev = [...iRows].reverse();
+              const oRev = [...oRows].reverse();
+              const len = Math.max(iRev.length, oRev.length);
+              const cell = (r, col) => r ? (r[col] ?? '') : '';
+              if (hasOutside) {
+                thead.innerHTML = `<tr>
+                  <th style="text-align:left">Inside Time</th>
+                  <th>${spInside.tempCol}</th><th>${spInside.humCol}</th>
+                  <th style="text-align:left">Outside Time</th>
+                  <th>${spOutside.tempCol}</th><th>${spOutside.humCol}</th>
+                </tr>`;
+                tbody.innerHTML = Array.from({ length: len }, (_, i) => {
+                  const ir = iRev[i], or = oRev[i];
+                  return `<tr>
+                    <td style="text-align:left;color:#aaa">${cell(ir, spInside.timeCol)}</td>
+                    <td>${cell(ir, spInside.tempCol)}</td>
+                    <td>${cell(ir, spInside.humCol)}</td>
+                    <td style="text-align:left;color:#aaa">${cell(or, spOutside.timeCol)}</td>
+                    <td>${cell(or, spOutside.tempCol)}</td>
+                    <td>${cell(or, spOutside.humCol)}</td>
+                  </tr>`;
+                }).join('');
+              } else {
+                thead.innerHTML = `<tr>
+                  <th style="text-align:left">Time</th>
+                  <th>${spInside.tempCol}</th><th>${spInside.humCol}</th>
+                </tr>`;
+                tbody.innerHTML = Array.from({ length: iRev.length }, (_, i) => {
+                  const ir = iRev[i];
+                  return `<tr>
+                    <td style="text-align:left;color:#aaa">${cell(ir, spInside.timeCol)}</td>
+                    <td>${cell(ir, spInside.tempCol)}</td>
+                    <td>${cell(ir, spInside.humCol)}</td>
+                  </tr>`;
+                }).join('');
+              }
+
+              spChartsReady = true;
+              document.getElementById('sp-reload-btn').style.display = '';
+            }
+
+
+            function resetKT() {
+              gData = null;
+              charts.forEach(c => c.destroy()); charts = [];
+              ktChartByName = {};
+              document.getElementById('drop-zone').style.display = '';
+              document.getElementById('content').style.display = 'none';
+              document.getElementById('kt-reload-btn').style.display = 'none';
+              document.getElementById('kt-error-banner').style.display = 'none';
+              document.getElementById('kt-vis-section').style.display = 'none';
+              document.getElementById('file-input').value = '';
+            }
+
+            function resetSP() {
+              spInside = spOutside = spGlobal = null;
+              spHasOutside = false;
+              spMonthlyChart = null; spMonthlyData = null;
+              spCharts.forEach(c => c.destroy()); spCharts = [];
+              spChartByName = {};
+              spChartsReady = false;
+              spBaseIRows = null; spBaseORows = null;
+              ['sp-inside-status', 'sp-outside-status'].forEach(id => {
+                document.getElementById(id).textContent = 'No file loaded';
+              });
+              ['sp-slot-inside', 'sp-slot-outside'].forEach(id => {
+                document.getElementById(id).classList.remove('loaded');
+              });
+              document.getElementById('sp-continue-bar').style.display = 'none';
+              document.getElementById('sp-upload-zone').style.display = '';
+              document.getElementById('sp-content').style.display = 'none';
+              document.getElementById('sp-vis-section').style.display = 'none';
+              document.getElementById('sp-reload-btn').style.display = 'none';
+              document.getElementById('sp-error-banner').style.display = 'none';
+              document.getElementById('sp-date-from').value = '';
+              document.getElementById('sp-date-to').value = '';
+              document.getElementById('sp-readings-card').classList.remove('filtered');
+            }
+
+            // SP date filter modal
+            let spModalMode = 'range';
+
+            function switchSPModalMode(mode) {
+              spModalMode = mode;
+              document.getElementById('sp-tab-range').classList.toggle('active', mode === 'range');
+              document.getElementById('sp-tab-month').classList.toggle('active', mode === 'month');
+              document.getElementById('sp-modal-date-section').style.display  = mode === 'range' ? 'flex' : 'none';
+              document.getElementById('sp-modal-month-section').style.display = mode === 'month' ? 'flex' : 'none';
+            }
+
+            function openSPModal() {
+              if (!spGlobal) return;
+              const allTs = [...spInside.rows.map(r => r[SP_TS]), ...(spOutside ? spOutside.rows.map(r => r[SP_TS]) : [])].sort((a,b)=>a-b);
+              function toInput(ts) { return new Date(ts).toISOString().slice(0, 16); }
+              const fromEl = document.getElementById('sp-date-from');
+              const toEl   = document.getElementById('sp-date-to');
+              if (!fromEl.value && allTs.length) fromEl.value = toInput(allTs[0]);
+              if (!toEl.value   && allTs.length) toEl.value   = toInput(allTs[allTs.length - 1]);
+              document.getElementById('sp-modal-range-hint').textContent =
+                allTs.length ? `Data spans ${toInput(allTs[0])} → ${toInput(allTs[allTs.length-1])} UTC` : '';
+
+              // Populate year dropdown from actual data
+              const years = [...new Set([
+                ...spInside.rows.map(r => new Date(r[SP_TS]).getUTCFullYear()),
+                ...(spOutside ? spOutside.rows.map(r => new Date(r[SP_TS]).getUTCFullYear()) : []),
+              ])].sort((a, b) => a - b);
+              const yearSel = document.getElementById('sp-filter-year');
+              const prevYear = yearSel.value;
+              yearSel.innerHTML = years.map(y => `<option value="${y}">${y}</option>`).join('');
+              if (prevYear && years.includes(+prevYear)) yearSel.value = prevYear;
+
+              // Default month/year to current date if within data range, else latest
+              if (!yearSel.dataset.set) {
+                const now = new Date();
+                const nowYear = now.getUTCFullYear(), nowMonth = now.getUTCMonth();
+                yearSel.value = years.includes(nowYear) ? nowYear : years[years.length - 1];
+                document.getElementById('sp-filter-month').value = nowMonth;
+                yearSel.dataset.set = '1';
+              }
+
+              document.getElementById('sp-modal-overlay').style.display = 'flex';
+            }
+
+            function closeSPModal() { document.getElementById('sp-modal-overlay').style.display = 'none'; }
+
+            function applySPFilter() {
+              if (!spGlobal) return;
+              let filterRows;
+              if (spModalMode === 'month') {
+                const month = parseInt(document.getElementById('sp-filter-month').value);
+                const year  = parseInt(document.getElementById('sp-filter-year').value);
+                filterRows = rows => rows.filter(r => {
+                  const d = new Date(r[SP_TS]);
+                  return d.getUTCFullYear() === year && d.getUTCMonth() === month;
+                });
+              } else {
+                const from = document.getElementById('sp-date-from').value;
+                const to   = document.getElementById('sp-date-to').value;
+                filterRows = rows => rows.filter(r => {
+                  const ts = new Date(r[SP_TS]).toISOString().slice(0, 16);
+                  return (!from || ts >= from) && (!to || ts <= to);
+                });
+              }
+              closeSPModal();
+              const iFiltered = filterRows(spInside.rows);
+              const oFiltered = spOutside ? filterRows(spOutside.rows) : [];
+              showLoading(true, 'Rendering charts…');
+              setTimeout(() => {
+                renderSP(iFiltered, oFiltered);
+                const isFiltered = iFiltered.length < spInside.rows.length || (spOutside && oFiltered.length < spOutside.rows.length);
+                document.getElementById('sp-readings-card').classList.toggle('filtered', isFiltered);
+                showLoading(false);
+              }, 0);
+            }
+
+            function clearSPFilter() {
+              document.getElementById('sp-date-from').value = '';
+              document.getElementById('sp-date-to').value = '';
+              delete document.getElementById('sp-filter-year').dataset.set;
+              switchSPModalMode('range');
+              closeSPModal();
+              if (spGlobal) {
+                showLoading(true, 'Rendering charts…');
+                setTimeout(() => { renderSP(spInside.rows, spOutside ? spOutside.rows : []); showLoading(false); }, 0);
+              }
+              document.getElementById('sp-readings-card').classList.remove('filtered');
+            }
+
+            // ── Chart visibility toggles ──────────────────────────────────────────────
+
+            function toggleChart(cardId, btnId) {
+              const card = document.getElementById(cardId);
+              const btn  = document.getElementById(btnId);
+              if (!card || !btn) return;
+              const hiding = !btn.classList.contains('hidden-chart');
+              card.style.display = hiding ? 'none' : '';
+              btn.classList.toggle('hidden-chart', hiding);
+            }
+
+            function toggleKTChart(cardId, btnId) { toggleChart(cardId, btnId); }
+            function toggleSPChart(cardId, btnId) { toggleChart(cardId, btnId); }
+
+            function toggleVisPanel(prefix) {
+              const toggle = document.getElementById(`${prefix}-vis-toggle`);
+              const panel  = document.getElementById(`${prefix}-vis-panel`);
+              if (!toggle || !panel) return;
+              const opening = !toggle.classList.contains('open');
+              toggle.classList.toggle('open', opening);
+              panel.style.display = opening ? 'block' : 'none';
+            }
+
+            function resetKTChartVis() {
+              // Close panel on new file load
+              const toggle = document.getElementById('kt-vis-toggle');
+              const panel  = document.getElementById('kt-vis-panel');
+              if (toggle) toggle.classList.remove('open');
+              if (panel)  panel.style.display = 'none';
+
+              ['kt-card-emc','kt-card-fans','kt-card-dt','kt-card-temp','kt-card-hum','kt-card-hum-delta','kt-card-rh-emc','kt-card-temp-delta','kt-card-monthly','kt-card-bat','kt-card-wick'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = '';
+              });
+              ['kt-vis-emc','kt-vis-fans','kt-vis-dt','kt-vis-temp','kt-vis-hum','kt-vis-hum-delta','kt-vis-rh-emc','kt-vis-temp-delta','kt-vis-monthly','kt-vis-bat','kt-vis-wick'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.remove('hidden-chart');
+              });
+            }
+
+            function resetSPChartVis(hasOutside) {
+              if (hasOutside === undefined) hasOutside = spHasOutside;
+
+              // Show the section, close panel on new render
+              document.getElementById('sp-vis-section').style.display = '';
+              const toggle = document.getElementById('sp-vis-toggle');
+              const panel  = document.getElementById('sp-vis-panel');
+              if (toggle) toggle.classList.remove('open');
+              if (panel)  panel.style.display = 'none';
+
+              // Always-visible charts
+              ['sp-card-temp','sp-card-hum','sp-card-emc','sp-card-monthly'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = '';
+              });
+              ['sp-vis-temp','sp-vis-hum','sp-vis-emc','sp-vis-monthly'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.remove('hidden-chart');
+              });
+
+              // Outside-only charts: show toggle buttons only when outside data present
+              const outsideCards = ['sp-card-temp-delta','sp-card-hum-delta'];
+              const outsideBtns  = ['sp-vis-tdelta','sp-vis-hdelta'];
+              outsideCards.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = hasOutside ? '' : 'none';
+              });
+              outsideBtns.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                  el.style.display = hasOutside ? '' : 'none';
+                  el.classList.remove('hidden-chart');
+                }
+              });
+            }
+
+            // SP file input events
+            document.getElementById('sp-inside-input').addEventListener('change', e => loadSPFile(e.target.files[0], 'inside'));
+            document.getElementById('sp-outside-input').addEventListener('change', e => loadSPFile(e.target.files[0], 'outside'));
+
+            // SP drag-and-drop on individual slots
+            ['inside', 'outside'].forEach(slot => {
+              const el = document.getElementById(`sp-slot-${slot}`);
+              el.addEventListener('dragover', e => { e.preventDefault(); e.stopPropagation(); el.classList.add('drag-over'); });
+              el.addEventListener('dragleave', e => { e.stopPropagation(); if (!el.contains(e.relatedTarget)) el.classList.remove('drag-over'); });
+              el.addEventListener('drop', e => {
+                e.preventDefault();
+                e.stopPropagation();
+                el.classList.remove('drag-over');
+                loadSPFile(e.dataTransfer.files[0], slot);
+              });
+            });
+
+            // SP modal overlay click-outside
+            document.getElementById('sp-modal-overlay').addEventListener('click', e => {
+              if (e.target === document.getElementById('sp-modal-overlay')) closeSPModal();
+            });
+
+        </script>
+        <div id="loading-overlay">
+          <div class="spinner"></div>
+          <p id="loading-msg">Loading…</p>
+        </div>
+        <div id="drag-tab-hint" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#333;color:#aaa;padding:10px 20px;border-radius:8px;font-size:.85rem;pointer-events:none;display:none;z-index:200;white-space:nowrap;border:1px solid #444;"></div>
+    </body>
+</html>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>KilnLog</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script>
+            if (typeof Chart === 'undefined') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    var banner = document.createElement('div');
+                    banner.style.cssText = 'position:fixed;top:0;left:0;width:100%;background:#c0392b;color:#fff;padding:12px 20px;font-size:.9rem;z-index:9999;text-align:center;';
+                    banner.textContent = 'Chart.js failed to load — the dashboard will not work. Please check your internet connection or try reloading the page.';
+                    document.body.insertBefore(banner, document.body.firstChild);
+                });
+            }
+        </script>
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: system-ui, sans-serif;
+                background: #1a1a1a;
+                color: #e0e0e0;
+                min-height: 100vh;
+            }
+
+            header {
+                background: #111;
+                border-bottom: 1px solid #333;
+                padding: 14px 24px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+
+            header h1 {
+                font-size: 1.1rem;
+                font-weight: 600;
+                letter-spacing: 0.03em;
+            }
+            header span {
+                color: #666;
+                font-size: 0.85rem;
+            }
+
             #file-label {
                 background: #2a6df4;
                 color: #fff;
