@@ -1,6 +1,6 @@
-# KilnLog Dashboard — Quickstart Guide
+# KilnLog — Quickstart Guide
 
-The dashboard is a single HTML file that runs entirely in your browser. No installation or internet connection required — just open `dashboard.html` in Chrome, Firefox, or Safari.
+KilnLog is a single HTML file that runs entirely in your browser. No installation or internet connection required — just open `kilnlog.html` in Chrome, Firefox, or Safari.
 
 **Browser support:** Chrome 80+, Firefox 74+, Safari 13.1+, Edge 80+. Internet Explorer is not supported.
 
