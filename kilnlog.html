@@ -444,9 +444,13 @@
         <header>
             <h1>KilnLog</h1>
             <span id="file-name">No file loaded</span>
+            <a href="https://github.com/eabredder/KilnLog" target="_blank" rel="noopener" title="Help &amp; documentation" style="margin-left:auto;color:#888;font-size:.82rem;text-decoration:none;display:flex;align-items:center;gap:5px;white-space:nowrap;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Help
+            </a>
             <label id="file-label" for="file-input">Load CSV</label>
             <input type="file" id="file-input" accept=".csv" />
-            <button id="sp-reload-btn" onclick="resetSP()" style="display:none;margin-left:auto;background:#2a6df4;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:.85rem;border:none;white-space:nowrap;">Load new files</button>
+            <button id="sp-reload-btn" onclick="resetSP()" style="display:none;background:#2a6df4;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:.85rem;border:none;white-space:nowrap;">Load new files</button>
         </header>
         <nav class="tab-nav">
           <button class="tab-btn active" id="tab-kt" onclick="showTab('kt')">Kilntroller</button>
