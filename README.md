@@ -214,7 +214,7 @@ Both views include a scrollable raw data table at the bottom of the page showing
 
 ## Tips
 
-- **The Help link** (top-right corner of every tab) opens this guide and the full project documentation on GitHub.
+- **The Help link** (top-right corner of every tab) opens this guide in a new tab — no GitHub account needed.
 - **Large files load slowly the first time** but filter changes after that are fast — the data is held in memory until you load a new file.
 - **All timestamps are in UTC** (Coordinated Universal Time). If your sensor logs in local time, adjust the Time Window hours accordingly so the Day and Night filters align with your actual daylight hours.
 - **Watch the EMC mode indicator** below the Kilntroller EMC chart. If it reports a low percentage of psychrometric (wet-bulb) readings, open the **Wick Health** chart to see whether the wick-adjacent RH has been dropping below the 88 % good threshold or crossing the 70 % failed threshold — this tells you whether the drop is due to a dry wick that needs attention, or simply near-saturated ambient conditions (which is normal and self-correcting).
