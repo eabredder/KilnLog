@@ -109,10 +109,6 @@ Background shading indicates fan controller state: **orange** = fans running (ac
 
 The number of fans running (0–4) at each point in time. Useful for spotting patterns in fan cycling and verifying the controller is responding to EMC changes as expected.
 
-### Temperature Depression
-
-The wet-bulb temperature depression — the difference between the dry-bulb and wet-bulb temperatures (°C). Evaporation from the wet wick cools the wet-bulb sensor below the ambient air temperature; this depression is the primary input to the psychrometric calculation. A healthy, well-wetted wick typically shows a depression of **4–8 °C** at typical kiln operating temperatures. If the depression collapses toward zero while humidity remains high, the wick likely needs re-wetting. Note: the dry-bulb sensor's anti-condensation heater adds a small upward bias to the absolute temperature values, but the trend over time is reliable.
-
 ### Kiln vs. Outside Temperature
 
 Three lines: **kiln dry-bulb** (solid), **kiln wet-bulb** (dashed), and **outside air temperature**. Yellow shading between the dry-bulb and outside lines indicates periods when the kiln is warmer than outside (solar gain or retained heat); blue shading indicates periods when the kiln is cooler. Absolute dry-bulb readings carry a small upward bias (+0.5–2 °C) from the sensor heater.
@@ -143,12 +139,28 @@ Battery voltage and solar panel voltage over time. Useful for confirming the pow
 
 ### Wick Health
 
-Dedicated chart for monitoring wet-wick condition over time. The wet wick is a water-saturated fabric fitted to the wet-bulb sensor; its continuous evaporation is what produces the temperature depression that makes the psychrometric EMC calculation possible. Shows four traces:
+Dedicated chart for monitoring wet-wick condition over time. The wet wick is a water-saturated fabric fitted to the wet-bulb sensor; its continuous evaporation is what produces the temperature depression that makes the psychrometric EMC calculation possible.
 
-- **Wick RH %** (solid teal, left axis) — the relative humidity measured at the wet-bulb sensor surface, directly adjacent to the wick. A healthy, well-wetted wick reads consistently above 88 %.
+The chart combines all three wick diagnostic signals in one view so you can distinguish a dry wick from near-saturated ambient air — two conditions that look similar (collapsed depression) but have different causes and responses.
+
+**Left axis — Wick RH %**
+
+- **Wick RH %** (solid teal) — the relative humidity measured at the wet-bulb sensor surface, directly adjacent to the wick. A healthy, well-wetted wick reads consistently above 88 %.
 - **Good threshold 88 %** (dashed green) — wick-adjacent RH above this line means the wick is healthy and the psychrometric measurement is trusted at full weight.
 - **Failed threshold 70 %** (dashed red) — wick-adjacent RH below this line in dry-air conditions means the Kilntroller has detected a failed wick and switched to sensor-only EMC automatically. Fan control continues uninterrupted.
-- **Dew Margin °C** (amber, right axis) — the difference between the current dry-bulb temperature and the dew point (the temperature at which the air would become fully saturated and condensation would form). A large dew margin means dry air where evaporation is most reliable. When this line drops below ~1.5 °C the air is near-saturated and evaporation is physically suppressed regardless of wick condition — this is normal behaviour in very humid ambient conditions, not a fault.
+
+**Right axis — °C**
+
+- **Temperature depression dT** (purple, filled) — the difference between the dry-bulb and wet-bulb temperatures. Evaporation from the wet wick cools the wet-bulb sensor below ambient air temperature; this gap is the primary input to the psychrometric calculation. A healthy, well-wetted wick typically shows **4–8 °C** at normal kiln operating temperatures. The dry-bulb sensor's anti-condensation heater adds a small upward bias to the absolute value — watch the trend, not the number.
+- **Dew margin °C** (amber) — the difference between the current dry-bulb temperature and the dew point (the temperature at which the air would become fully saturated and condensation would form). A large dew margin indicates dry air where evaporation is most reliable. When this line drops toward zero the air is near-saturated and evaporation is physically suppressed regardless of wick condition.
+- **Zero reference** (dashed red) — a baseline to make it easy to see when the depression has collapsed.
+
+**Reading the chart together:** if the depression collapses toward zero, check wick RH and dew margin to identify the cause:
+
+| Depression low | Wick RH | Dew margin | Diagnosis |
+|---|---|---|---|
+| Yes | Below 70 % | High | Wick is dry — re-wet the wick |
+| Yes | Above 88 % | Low (near zero) | Air near-saturated — normal, self-correcting |
 
 A note below the chart counts any readings in the filtered dataset where the wick was flagged as failed or where a physical anomaly was detected.
 
