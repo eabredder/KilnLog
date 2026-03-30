@@ -2,7 +2,7 @@
 
 KilnLog is a browser-based dashboard for reviewing data logged by the Kilntroller — an automatic fan controller for passive solar lumber drying kilns. Load a CSV (comma-separated values) data file exported from the Kilntroller's SD card and KilnLog displays charts, summary cards, and raw data tables to help you understand how your kiln is performing and whether your drying schedule is on track.
 
-No installation required — just open `kilnlog.html` in Chrome, Firefox, or Safari.
+No installation required — just open `kilnlog.html` in Chrome, Firefox, or Safari, or try the live hosted version at **[www.ericbredder.com/KilnLog/kilnlog.html](https://www.ericbredder.com/KilnLog/kilnlog.html)**.
 
 > **Internet connection required on first use.** KilnLog loads its charting library from an external content delivery network (CDN) on startup. Once loaded, the browser caches it for future visits, but the first open — and any session after the browser cache is cleared — needs a connection. Your CSV data never leaves your browser; all processing happens locally on your computer.
 
