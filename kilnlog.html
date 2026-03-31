@@ -47,7 +47,7 @@
                 letter-spacing: 0.03em;
             }
             header span {
-                color: #666;
+                color: #aaa;
                 font-size: 0.85rem;
             }
 
@@ -58,7 +58,7 @@
                 align-items: center;
                 justify-content: center;
                 height: calc(100vh - 56px);
-                color: #555;
+                color: #999;
                 gap: 10px;
             }
             #drop-zone.drag-over {
@@ -95,8 +95,8 @@
                 padding: 14px 16px;
             }
             .card-label {
-                font-size: 0.72rem;
-                color: #888;
+                font-size: 0.875rem;
+                color: #b8b8b8;
                 text-transform: uppercase;
                 letter-spacing: 0.05em;
                 margin-bottom: 6px;
@@ -107,13 +107,13 @@
                 line-height: 1;
             }
             .card-unit {
-                font-size: 0.75rem;
-                color: #888;
+                font-size: 0.875rem;
+                color: #b8b8b8;
                 margin-left: 2px;
             }
             .card-sub {
-                font-size: 0.78rem;
-                color: #666;
+                font-size: 0.875rem;
+                color: #aaa;
                 margin-top: 4px;
             }
 
@@ -169,15 +169,15 @@
                 padding: 16px;
             }
             .chart-card h3 {
-                font-size: 0.82rem;
+                font-size: 0.875rem;
                 color: #aaa;
                 margin-bottom: 4px;
                 text-transform: uppercase;
                 letter-spacing: 0.04em;
             }
             .chart-note {
-                font-size: 0.75rem;
-                color: #666;
+                font-size: 0.8rem;
+                color: #aaa;
                 margin-bottom: 12px;
                 font-style: italic;
             }
@@ -194,7 +194,7 @@
                 margin-bottom: 24px;
             }
             .table-card h3 {
-                font-size: 0.82rem;
+                font-size: 0.875rem;
                 color: #aaa;
                 margin-bottom: 12px;
                 text-transform: uppercase;
@@ -210,12 +210,12 @@
             table {
                 width: 100%;
                 border-collapse: collapse;
-                font-size: 0.78rem;
+                font-size: 0.875rem;
                 white-space: nowrap;
             }
             th {
                 background: #1a1a1a;
-                color: #888;
+                color: #b8b8b8;
                 font-weight: 500;
                 padding: 6px 10px;
                 text-align: right;
@@ -247,8 +247,8 @@
                 background: #2c2c2c;
             }
             .card-hint {
-                font-size: 0.7rem;
-                color: #555;
+                font-size: 0.8rem;
+                color: #999;
                 margin-top: 6px;
             }
             .card.filtered {
@@ -291,8 +291,8 @@
                 gap: 5px;
             }
             .modal-row label {
-                font-size: 0.78rem;
-                color: #888;
+                font-size: 0.875rem;
+                color: #b8b8b8;
             }
             .modal-row input[type="datetime-local"] {
                 background: #1a1a1a;
@@ -304,21 +304,22 @@
                 width: 100%;
                 color-scheme: dark;
             }
-            .modal-row input[type="datetime-local"]:focus {
-                outline: none;
+            .modal-row input[type="datetime-local"]:focus-visible {
+                outline: 2px solid #2a6df4;
+                outline-offset: 2px;
                 border-color: #2a6df4;
             }
             #modal-range-hint {
-                font-size: 0.76rem;
-                color: #666;
+                font-size: 0.8rem;
+                color: #aaa;
                 margin-top: -8px;
             }
             .sp-modal-tabs { display:flex; border-bottom:1px solid #333; margin-bottom:4px; gap:0; }
-            .sp-modal-tab { flex:1; padding:8px 4px; background:none; border:none; border-bottom:2px solid transparent; color:#666; cursor:pointer; font-size:.82rem; }
+            .sp-modal-tab { flex:1; padding:8px 4px; background:none; border:none; border-bottom:2px solid transparent; color:#aaa; cursor:pointer; font-size:.875rem; }
             .sp-modal-tab.active { color:#e0e0e0; border-bottom-color:#2a6df4; }
             .sp-modal-tab:hover:not(.active) { color:#aaa; }
             .modal-row select { background:#1a1a1a; border:1px solid #444; border-radius:6px; color:#e0e0e0; padding:7px 10px; font-size:.88rem; width:100%; color-scheme:dark; }
-            .modal-row select:focus { outline:none; border-color:#2a6df4; }
+            .modal-row select:focus-visible { outline:2px solid #2a6df4; outline-offset:2px; border-color:#2a6df4; }
             .modal-actions {
                 display: flex;
                 gap: 10px;
@@ -329,7 +330,7 @@
                 border-radius: 6px;
                 border: none;
                 cursor: pointer;
-                font-size: 0.85rem;
+                font-size: 0.875rem;
             }
             .btn-primary {
                 background: #2a6df4;
@@ -348,51 +349,51 @@
             }
             .btn-clear {
                 background: transparent;
-                color: #e05050;
-                border: 1px solid #e05050;
+                color: #ff7070;
+                border: 1px solid #ff7070;
             }
             .btn-clear:hover {
-                background: rgba(224, 80, 80, 0.1);
+                background: rgba(255, 112, 112, 0.1);
             }
             .tab-nav { background:#111; border-bottom:1px solid #333; display:flex; padding:0 24px; }
-            .tab-btn { padding:10px 20px; border:none; background:transparent; color:#666; cursor:pointer; font-size:.88rem; border-bottom:2px solid transparent; letter-spacing:.02em; }
+            .tab-btn { padding:10px 20px; border:none; background:transparent; color:#aaa; cursor:pointer; font-size:.88rem; border-bottom:2px solid transparent; letter-spacing:.02em; }
             .tab-btn.active { color:#e0e0e0; border-bottom-color:#2a6df4; }
             .tab-btn:hover:not(.active) { color:#aaa; }
-            .error-banner { background:rgba(224,80,80,.12); border:1px solid #e05050; border-radius:8px; color:#e08080; padding:12px 16px; font-size:.85rem; margin:16px 24px 0; display:none; }
+            .error-banner { background:rgba(224,80,80,.12); border:1px solid #e05050; border-radius:8px; color:#ff9999; padding:12px 16px; font-size:.85rem; margin:16px 24px 0; display:none; }
             #sp-upload-zone { display:flex; height:calc(100vh - 98px); position:relative; }
             #sp-continue-bar { display:none; position:absolute; bottom:32px; left:0; right:0; text-align:center; }
             .sp-slots { display:flex; width:100%; height:100%; gap:0; padding:0; flex-wrap:nowrap; }
-            .sp-slot { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:#555; position:relative; }
+            .sp-slot { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:#999; position:relative; }
             .sp-slot + .sp-slot { border-left:1px solid #2a2a2a; }
             .sp-slot.drag-over { color:#2a6df4; border:2px dashed #2a6df4; }
             .sp-slot.loaded { color:#50d080; }
             .sp-slot svg { opacity:.4; }
             .sp-slot p { font-size:1rem; }
             .sp-slot small { font-size:.8rem; }
-            .sp-slot-header { position:absolute; top:24px; left:50%; transform:translateX(-50%); font-size:.82rem; color:#aaa; text-transform:uppercase; letter-spacing:.06em; white-space:nowrap; }
+            .sp-slot-header { position:absolute; top:24px; left:50%; transform:translateX(-50%); font-size:.875rem; color:#aaa; text-transform:uppercase; letter-spacing:.06em; white-space:nowrap; }
             .sp-slot-status { font-size:.8rem; }
             .sp-slot.loaded .sp-slot-status { color:#50d080; }
-            .sp-browse-btn { background:#2a6df4; color:#fff; padding:6px 16px; border-radius:6px; cursor:pointer; font-size:.85rem; white-space:nowrap; }
+            .sp-browse-btn { background:#2a6df4; color:#fff; padding:6px 16px; border-radius:6px; cursor:pointer; font-size:.875rem; white-space:nowrap; }
             .sp-browse-btn:hover { background:#1a5de0; }
 
             .chart-vis-section { border-top:1px solid #2a2a2a; border-bottom:1px solid #2a2a2a; background:#1c1c1c; }
-            .chart-vis-toggle { display:flex; align-items:center; gap:8px; width:100%; padding:9px 24px; background:none; border:none; color:#666; cursor:pointer; font-size:.78rem; text-align:left; }
-            .chart-vis-toggle:hover { color:#aaa; }
-            .chart-vis-toggle-label { font-weight:600; color:#888; }
-            .chart-vis-toggle-hint { color:#444; }
+            .chart-vis-toggle { display:flex; align-items:center; gap:8px; width:100%; padding:9px 24px; background:none; border:none; color:#aaa; cursor:pointer; font-size:.875rem; text-align:left; }
+            .chart-vis-toggle:hover { color:#e0e0e0; }
+            .chart-vis-toggle-label { font-weight:600; color:#b8b8b8; }
+            .chart-vis-toggle-hint { color:#999; }
             .chart-vis-caret { margin-left:2px; transition:transform .18s; font-size:.65rem; }
             .chart-vis-toggle.open .chart-vis-caret { transform:rotate(180deg); }
             .chart-vis-panel { display:none; padding:0 24px 14px; }
-            .chart-vis-instruction { font-size:.72rem; color:#555; margin-bottom:10px; }
+            .chart-vis-instruction { font-size:.8rem; color:#999; margin-bottom:10px; }
             .chart-vis-bar { display:grid; grid-template-columns:1fr 1fr; gap:5px; }
-            .chart-vis-btn { padding:4px 12px; border:1px solid #444; border-radius:20px; background:transparent; color:#e0e0e0; cursor:pointer; font-size:.78rem; text-align:left; }
-            .chart-vis-btn.hidden-chart { color:#444; border-color:#2a2a2a; text-decoration:line-through; }
-            .chart-vis-btn:hover { border-color:#888; color:#aaa; }
+            .chart-vis-btn { padding:4px 12px; border:1px solid #444; border-radius:20px; background:transparent; color:#e0e0e0; cursor:pointer; font-size:.875rem; text-align:left; }
+            .chart-vis-btn.hidden-chart { color:#777; border-color:#3a3a3a; text-decoration:line-through; }
+            .chart-vis-btn:hover { border-color:#aaa; color:#e0e0e0; }
             .chart-vis-sep { display:none; }
-            .chart-vis-reset { grid-column:1/-1; padding:4px 12px; border:1px solid #2a6df4; border-radius:20px; background:transparent; color:#2a6df4; cursor:pointer; font-size:.78rem; text-align:center; margin-top:2px; }
+            .chart-vis-reset { grid-column:1/-1; padding:4px 12px; border:1px solid #2a6df4; border-radius:20px; background:transparent; color:#2a6df4; cursor:pointer; font-size:.875rem; text-align:center; margin-top:2px; }
             .chart-vis-reset:hover { background:#2a6df420; }
             .sp-card-row { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px; }
-            .sp-card-loc { font-size:.72rem; color:#888; text-transform:uppercase; letter-spacing:.04em; }
+            .sp-card-loc { font-size:.8rem; color:#b8b8b8; text-transform:uppercase; letter-spacing:.04em; }
             .sp-card-row .card-value { font-size:1.2rem; }
 
             /* Loading overlay */
@@ -408,34 +409,68 @@
             .card.out-hum { border-color:#60a0e0; }
             /* Time window filter card */
             .tw-filter-card { border-color:#4a3a6a; }
-            .tw-btn { flex:1; padding:4px 0; border:1px solid #444; border-radius:4px; background:transparent; color:#888; cursor:pointer; font-size:.75rem; }
+            .tw-btn { flex:1; padding:4px 0; border:1px solid #444; border-radius:4px; background:transparent; color:#b8b8b8; cursor:pointer; font-size:.875rem; }
             .tw-btn.active { background:#2a6df4; border-color:#2a6df4; color:#fff; }
-            .tw-btn:hover:not(.active) { border-color:#888; color:#aaa; }
-            .tw-hours { font-size:.75rem; color:#888; display:flex; flex-direction:column; }
+            .tw-btn:hover:not(.active) { border-color:#aaa; color:#e0e0e0; }
+            .tw-hours { font-size:.875rem; color:#b8b8b8; display:flex; flex-direction:column; }
             .tw-hours label { display:flex; align-items:center; gap:4px; margin-bottom:4px; }
             .tw-hours.night-order label:first-child { order:2; }
             .tw-hours.night-order label:last-child  { order:1; }
-            .tw-hours input[type=number] { width:42px; background:#1a1a1a; border:1px solid #444; border-radius:4px; color:#e0e0e0; padding:2px 5px; font-size:.75rem; text-align:center; -moz-appearance:textfield; }
+            .tw-hours input[type=number] { width:48px; background:#1a1a1a; border:1px solid #444; border-radius:4px; color:#e0e0e0; padding:2px 5px; font-size:.875rem; text-align:center; -moz-appearance:textfield; }
             .tw-hours input[type=number]::-webkit-inner-spin-button { display:none; }
+
+            /* Skip navigation link (WCAG 2.4.1) — visually hidden until focused */
+            .skip-link {
+                position: absolute;
+                top: -100%;
+                left: 0;
+                background: #2a6df4;
+                color: #fff;
+                padding: 10px 20px;
+                font-size: 0.875rem;
+                font-weight: 600;
+                text-decoration: none;
+                z-index: 9999;
+            }
+            .skip-link:focus {
+                top: 0;
+            }
+
+            /* Focus indicators (WCAG 2.4.7) — keyboard navigation only */
+            .tab-btn:focus-visible,
+            .btn:focus-visible,
+            .sp-browse-btn:focus-visible,
+            .sp-modal-tab:focus-visible,
+            .chart-vis-toggle:focus-visible,
+            .chart-vis-btn:focus-visible,
+            .chart-vis-reset:focus-visible,
+            .tw-btn:focus-visible,
+            .tw-hours input[type=number]:focus-visible,
+            a:focus-visible {
+                outline: 2px solid #2a6df4;
+                outline-offset: 2px;
+            }
         </style>
     </head>
     <body>
         <header>
             <h1>KilnLog</h1>
-            <a href="help.html" target="_blank" title="Help &amp; documentation" style="margin-left:auto;color:#888;font-size:.82rem;text-decoration:none;display:flex;align-items:center;gap:5px;white-space:nowrap;">
+            <a href="help.html" target="_blank" title="Help &amp; documentation" style="margin-left:auto;color:#b8b8b8;font-size:.875rem;text-decoration:none;display:flex;align-items:center;gap:5px;white-space:nowrap;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                 Help
             </a>
-            <button id="kt-reload-btn" onclick="resetKT()" style="display:none;background:#2a6df4;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:.85rem;border:none;white-space:nowrap;">Load new file</button>
-            <button id="sp-reload-btn" onclick="resetSP()" style="display:none;background:#2a6df4;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:.85rem;border:none;white-space:nowrap;">Load new files</button>
+            <button id="kt-reload-btn" onclick="resetKT()" style="display:none;background:#2a6df4;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:.875rem;border:none;white-space:nowrap;">Load new file</button>
+            <button id="sp-reload-btn" onclick="resetSP()" style="display:none;background:#2a6df4;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:.875rem;border:none;white-space:nowrap;">Load new files</button>
         </header>
-        <nav class="tab-nav">
-          <button class="tab-btn active" id="tab-kt" onclick="showTab('kt')">Kilntroller</button>
-          <button class="tab-btn" id="tab-sp" onclick="showTab('sp')">SensorPush</button>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <nav class="tab-nav" role="tablist" aria-label="Dashboard views">
+          <button class="tab-btn active" id="tab-kt" role="tab" aria-selected="true" aria-controls="kt-view" onclick="showTab('kt')">Kilntroller</button>
+          <button class="tab-btn" id="tab-sp" role="tab" aria-selected="false" aria-controls="sp-view" onclick="showTab('sp')">SensorPush</button>
         </nav>
 
-        <div id="kt-view">
-            <div id="kt-error-banner" class="error-banner"></div>
+        <main id="main-content">
+        <div id="kt-view" role="tabpanel" aria-labelledby="tab-kt">
+            <div id="kt-error-banner" class="error-banner" role="alert"></div>
 
             <div id="drop-zone">
                 <svg
@@ -533,10 +568,10 @@
                             <button class="tw-btn"        data-tw-mode="night" onclick="setTimeFilter('kt','night')">Night</button>
                         </div>
                         <div class="tw-hours" style="display:none">
-                            <label><span id="kt-tw-l1">Day start</span> <input type="number" id="kt-day-start" min="0" max="23" value="6" oninput="setDayHours('kt',this.value,document.getElementById('kt-day-end').value)"> :00 UTC</label>
-                            <label><span id="kt-tw-l2">Day end</span> <input type="number" id="kt-day-end"   min="1" max="24" value="18" oninput="setDayHours('kt',document.getElementById('kt-day-start').value,this.value)"> :00 UTC</label>
+                            <label for="kt-day-start"><span id="kt-tw-l1">Day start</span> <input type="number" id="kt-day-start" min="0" max="23" value="6" oninput="setDayHours('kt',this.value,document.getElementById('kt-day-end').value)"> :00 UTC</label>
+                            <label for="kt-day-end"><span id="kt-tw-l2">Day end</span> <input type="number" id="kt-day-end"   min="1" max="24" value="18" oninput="setDayHours('kt',document.getElementById('kt-day-start').value,this.value)"> :00 UTC</label>
                         </div>
-                        <div id="kt-tw-hint" style="display:none;color:#e08080;font-size:.75rem;margin-top:4px;"></div>
+                        <div id="kt-tw-hint" role="alert" style="display:none;color:#e08080;font-size:.8rem;margin-top:4px;"></div>
                     </div>
                     <div class="card bat">
                         <div class="card-label">Battery</div>
@@ -575,7 +610,7 @@
                                 <label for="date-to">To</label>
                                 <input type="datetime-local" id="date-to" />
                             </div>
-                            <div id="modal-range-hint"></div>
+                            <div id="modal-range-hint" role="status"></div>
                         </div>
                         <div id="kt-modal-month-section" style="display:none;flex-direction:column;gap:16px">
                             <div class="modal-row">
@@ -635,22 +670,22 @@
                   </div>
                 </div>
 
-                <div id="kt-empty-msg" style="display:none;padding:40px 24px;color:#666;font-size:.9rem;text-align:center;">No data in this range — try widening the date or time window filter.</div>
+                <div id="kt-empty-msg" role="status" style="display:none;padding:40px 24px;color:#aaa;font-size:.9rem;text-align:center;">No data in this range — try widening the date or time window filter.</div>
 
                 <!-- Charts -->
                 <div class="charts">
                     <div class="chart-card wide" id="kt-card-emc">
                         <h3>Equilibrium Moisture Content (EMC) with fan on/off thresholds
-                          <span style="font-size:.75rem;font-weight:400;color:#666"> — dashed line: estimated from dry-bulb sensor RH only</span>
+                          <span style="font-size:.8rem;font-weight:400;color:#aaa"> — dashed line: estimated from dry-bulb sensor RH only</span>
                         </h3>
-                        <canvas id="chart-emc" height="90"></canvas>
-                        <p id="emc-mode-summary" style="font-size:.72rem;color:#666;margin-top:6px;text-align:right"></p>
+                        <canvas id="chart-emc" height="90" role="img" aria-label="Line chart: Equilibrium Moisture Content over time, with dashed fan-on and fan-off threshold lines. X-axis: time. Y-axis: EMC percentage."></canvas>
+                        <p id="emc-mode-summary" role="status" style="font-size:.8rem;color:#aaa;margin-top:6px;text-align:right"></p>
                     </div>
                     <div class="chart-card wide" id="kt-card-fans">
                         <h3>Fan activity — fans running over time</h3>
-                        <canvas id="chart-fans" height="60"></canvas>
+                        <canvas id="chart-fans" height="60" role="img" aria-label="Line chart: fan activity over time, showing when kiln fans were running. X-axis: time. Y-axis: fan state (0 = off, 1 = on)."></canvas>
                     </div>
-                    <div class="chart-card" id="kt-card-temp">
+                    <div class="chart-card wide" id="kt-card-temp">
                         <h3>Kiln vs. Outside Temperature</h3>
                         <p class="chart-note">
                             Yellow shading = kiln warmer than outside (solar gain).
@@ -659,35 +694,35 @@
                             anti-condensation heater — trends are reliable, absolute
                             values include a small upward bias.
                         </p>
-                        <canvas id="chart-temp" height="140"></canvas>
+                        <canvas id="chart-temp" height="140" role="img" aria-label="Line chart: kiln dry-bulb temperature versus outside temperature over time. Yellow shading indicates kiln warmer than outside (solar gain); blue shading indicates kiln cooler than outside. X-axis: time. Y-axis: temperature in °C."></canvas>
                     </div>
                     <div class="chart-card wide" id="kt-card-hum">
                         <h3>Kiln vs. Outside Humidity</h3>
-                        <canvas id="chart-hum" height="90"></canvas>
+                        <canvas id="chart-hum" height="90" role="img" aria-label="Line chart: kiln relative humidity versus outside relative humidity over time. X-axis: time. Y-axis: relative humidity percentage."></canvas>
                     </div>
                     <div class="chart-card wide" id="kt-card-hum-delta">
                         <h3>Humidity Difference (Kiln &minus; Outside)</h3>
-                        <canvas id="chart-hum-delta" height="90"></canvas>
+                        <canvas id="chart-hum-delta" height="90" role="img" aria-label="Line chart: humidity difference (kiln minus outside) over time. Positive values mean kiln is more humid than outside. X-axis: time. Y-axis: RH difference in percentage points."></canvas>
                     </div>
                     <div class="chart-card wide" id="kt-card-rh-emc">
                         <h3>Outside humidity vs. kiln EMC</h3>
-                        <canvas id="chart-rh-emc" height="90"></canvas>
+                        <canvas id="chart-rh-emc" height="90" role="img" aria-label="Line chart: outside relative humidity versus kiln EMC over time, showing whether outside conditions favour drying. X-axis: time. Dual Y-axes: EMC percentage (left) and relative humidity percentage (right)."></canvas>
                     </div>
                     <div class="chart-card wide" id="kt-card-temp-delta">
                         <h3>Temperature Difference (Kiln &minus; Outside)</h3>
-                        <canvas id="chart-temp-delta" height="90"></canvas>
+                        <canvas id="chart-temp-delta" height="90" role="img" aria-label="Line chart: temperature difference (kiln minus outside) over time. Positive values mean kiln is warmer than outside. X-axis: time. Y-axis: temperature difference in °C."></canvas>
                     </div>
                     <div class="chart-card wide" id="kt-card-monthly">
-                        <h3>Monthly Averages <span style="font-size:.75rem;font-weight:400;color:#666">— full dataset · follows time window filter</span></h3>
-                        <canvas id="chart-monthly" height="120"></canvas>
+                        <h3>Monthly Averages <span style="font-size:.8rem;font-weight:400;color:#aaa">— full dataset · follows time window filter</span></h3>
+                        <canvas id="chart-monthly" height="120" role="img" aria-label="Line chart: monthly averages for kiln temperature, outside temperature, kiln humidity, outside humidity, EMC, and temperature difference. Covers the full dataset and follows the time window filter. X-axis: month. Dual Y-axes: temperature in °C (left) and percentage (right)."></canvas>
                     </div>
                     <div class="chart-card" id="kt-card-bat">
                         <h3>Battery &amp; Solar</h3>
-                        <canvas id="chart-bat" height="140"></canvas>
+                        <canvas id="chart-bat" height="140" role="img" aria-label="Line chart: battery voltage, solar panel voltage, and battery state of charge over time. X-axis: time. Dual Y-axes: voltage in V (left) and state of charge percentage (right)."></canvas>
                     </div>
                     <div class="chart-card" id="kt-card-wick">
                         <h3>Wick Health
-                          <span style="font-size:.75rem;font-weight:400;color:#666"> — RH % left axis · temperature depression &amp; dew-point margin °C right axis · dashed lines: 88 % good / 70 % failed</span>
+                          <span style="font-size:.8rem;font-weight:400;color:#aaa"> — RH % left axis · temperature depression &amp; dew-point margin °C right axis · dashed lines: 88 % good / 70 % failed</span>
                         </h3>
                         <p class="chart-note">
                             Healthy wick: RH ≥ 88 % with 4–8 °C depression. If depression collapses toward zero, check RH —
@@ -695,8 +730,8 @@
                             RH still high with low dew margin means near-saturated air, which is normal and self-correcting.
                             Depression includes a small upward offset from the dry-bulb heater — watch the trend, not the absolute value.
                         </p>
-                        <canvas id="chart-wick" height="160"></canvas>
-                        <p id="kt-wick-note" style="font-size:.72rem;color:#666;margin-top:6px;text-align:right"></p>
+                        <canvas id="chart-wick" height="220" role="img" aria-label="Line chart: wick health diagnostics over time. Left axis: wick relative humidity percentage with dashed threshold lines at 88% (good) and 70% (failed). Right axis: temperature depression (dry-bulb minus wet-bulb) and dew-point margin in °C. A collapsing depression combined with low RH indicates a dry wick needing re-wetting."></canvas>
+                        <p id="kt-wick-note" role="status" style="font-size:.8rem;color:#aaa;margin-top:6px;text-align:right"></p>
                     </div>
                 </div>
 
@@ -713,8 +748,8 @@
             </div>
         </div>
 
-        <div id="sp-view" style="display:none">
-          <div id="sp-error-banner" class="error-banner"></div>
+        <div id="sp-view" role="tabpanel" aria-labelledby="tab-sp" style="display:none">
+          <div id="sp-error-banner" class="error-banner" role="alert"></div>
 
           <div id="sp-upload-zone">
             <div class="sp-slots">
@@ -736,7 +771,7 @@
               </div>
               <!-- Outside slot -->
               <div class="sp-slot" id="sp-slot-outside">
-                <div class="sp-slot-header">Outside <span style="font-size:.7rem;color:#555;font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></div>
+                <div class="sp-slot-header">Outside <span style="font-size:.8rem;color:#999;font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></div>
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                   <polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/>
@@ -809,10 +844,10 @@
                   <button class="tw-btn"        data-tw-mode="night" onclick="setTimeFilter('sp','night')">Night</button>
                 </div>
                 <div class="tw-hours" style="display:none">
-                  <label><span id="sp-tw-l1">Day start</span> <input type="number" id="sp-day-start" min="0" max="23" value="6" oninput="setDayHours('sp',this.value,document.getElementById('sp-day-end').value)"> :00 UTC</label>
-                  <label><span id="sp-tw-l2">Day end</span> <input type="number" id="sp-day-end"   min="1" max="24" value="18" oninput="setDayHours('sp',document.getElementById('sp-day-start').value,this.value)"> :00 UTC</label>
+                  <label for="sp-day-start"><span id="sp-tw-l1">Day start</span> <input type="number" id="sp-day-start" min="0" max="23" value="6" oninput="setDayHours('sp',this.value,document.getElementById('sp-day-end').value)"> :00 UTC</label>
+                  <label for="sp-day-end"><span id="sp-tw-l2">Day end</span> <input type="number" id="sp-day-end"   min="1" max="24" value="18" oninput="setDayHours('sp',document.getElementById('sp-day-start').value,this.value)"> :00 UTC</label>
                 </div>
-                <div id="sp-tw-hint" style="display:none;color:#e08080;font-size:.75rem;margin-top:4px;"></div>
+                <div id="sp-tw-hint" role="alert" style="display:none;color:#e08080;font-size:.8rem;margin-top:4px;"></div>
               </div>
             </div>
 
@@ -827,7 +862,7 @@
                 <div id="sp-modal-date-section" style="display:flex;flex-direction:column;gap:16px">
                   <div class="modal-row"><label for="sp-date-from">From</label><input type="datetime-local" id="sp-date-from"></div>
                   <div class="modal-row"><label for="sp-date-to">To</label><input type="datetime-local" id="sp-date-to"></div>
-                  <div id="sp-modal-range-hint" style="font-size:.76rem;color:#666;margin-top:-8px"></div>
+                  <div id="sp-modal-range-hint" role="status" style="font-size:.8rem;color:#aaa;margin-top:-8px"></div>
                 </div>
                 <div id="sp-modal-month-section" style="display:none;flex-direction:column;gap:16px">
                   <div class="modal-row">
@@ -874,33 +909,33 @@
               </div>
             </div>
 
-            <div id="sp-empty-msg" style="display:none;padding:40px 24px;color:#666;font-size:.9rem;text-align:center;">No data in this range — try widening the date or time window filter.</div>
+            <div id="sp-empty-msg" role="status" style="display:none;padding:40px 24px;color:#aaa;font-size:.9rem;text-align:center;">No data in this range — try widening the date or time window filter.</div>
 
             <!-- Charts -->
             <div class="charts">
               <div class="chart-card wide" id="sp-card-emc">
-                <h3>Estimated EMC <span style="font-size:.75rem;font-weight:400;color:#666">— approximation only · derived from ambient RH, not a psychrometric wet/dry bulb measurement</span></h3>
-                <canvas id="sp-chart-emc" height="90"></canvas>
+                <h3>Estimated EMC <span style="font-size:.8rem;font-weight:400;color:#aaa">— approximation only · derived from ambient RH, not a psychrometric wet/dry bulb measurement</span></h3>
+                <canvas id="sp-chart-emc" height="90" role="img" aria-label="Line chart: estimated EMC derived from ambient relative humidity over time. Approximation only — not a psychrometric measurement. X-axis: time. Y-axis: estimated EMC percentage."></canvas>
               </div>
               <div class="chart-card wide" id="sp-card-hum">
                 <h3>Kiln vs. Outside Humidity</h3>
-                <canvas id="sp-chart-hum" height="90"></canvas>
+                <canvas id="sp-chart-hum" height="90" role="img" aria-label="Line chart: inside kiln relative humidity versus outside relative humidity from SensorPush sensors over time. X-axis: time. Y-axis: relative humidity percentage."></canvas>
               </div>
               <div class="chart-card wide" id="sp-card-hum-delta">
                 <h3>Humidity Difference (Inside &minus; Outside)</h3>
-                <canvas id="sp-chart-hum-delta" height="90"></canvas>
+                <canvas id="sp-chart-hum-delta" height="90" role="img" aria-label="Line chart: humidity difference (inside minus outside) from SensorPush sensors over time. Positive values mean inside is more humid than outside. X-axis: time. Y-axis: RH difference in percentage points."></canvas>
               </div>
               <div class="chart-card wide" id="sp-card-temp">
                 <h3>Kiln vs. Outside Temperature</h3>
-                <canvas id="sp-chart-temp" height="90"></canvas>
+                <canvas id="sp-chart-temp" height="90" role="img" aria-label="Line chart: inside kiln temperature versus outside temperature from SensorPush sensors over time. X-axis: time. Y-axis: temperature in °C."></canvas>
               </div>
               <div class="chart-card wide" id="sp-card-temp-delta">
                 <h3>Temperature Difference (Inside &minus; Outside)</h3>
-                <canvas id="sp-chart-temp-delta" height="90"></canvas>
+                <canvas id="sp-chart-temp-delta" height="90" role="img" aria-label="Line chart: temperature difference (inside minus outside) from SensorPush sensors over time. Positive values mean inside is warmer than outside. X-axis: time. Y-axis: temperature difference in °C."></canvas>
               </div>
               <div class="chart-card wide" id="sp-card-monthly">
-                <h3>Monthly Averages <span style="font-size:.75rem;font-weight:400;color:#666">— full dataset · follows time window filter</span></h3>
-                <canvas id="sp-chart-monthly" height="120"></canvas>
+                <h3>Monthly Averages <span style="font-size:.8rem;font-weight:400;color:#aaa">— full dataset · follows time window filter</span></h3>
+                <canvas id="sp-chart-monthly" height="120" role="img" aria-label="Line chart: monthly averages for inside temperature, outside temperature, inside humidity, outside humidity, and temperature difference from SensorPush sensors. Covers the full dataset and follows the time window filter. X-axis: month. Dual Y-axes: temperature in °C (left) and percentage (right)."></canvas>
               </div>
             </div>
 
@@ -916,6 +951,7 @@
             </div>
           </div>
         </div>
+        </main>
 
         <script>
             // ── CSV parser ─────────────────────────────────────────────────────────────
@@ -1115,9 +1151,9 @@
                 const psychroPct   = modeFlags.length > 0 ? Math.round(psychroCount / modeFlags.length * 100) : 0;
                 const summaryEl = document.getElementById('emc-mode-summary');
                 if (summaryEl) {
-                  if (psychroCount === 0) summaryEl.innerHTML = '<span style="color:#888">&#9632;</span> RH source: sensor only — no wet wick detected';
+                  if (psychroCount === 0) summaryEl.innerHTML = '<span style="color:#b8b8b8">&#9632;</span> RH source: sensor only — no wet wick detected';
                   else if (sensorCount === 0) summaryEl.innerHTML = '<span style="color:#f08c28">&#9632;</span> RH source: psychrometric (wet-bulb) — 100% of readings';
-                  else summaryEl.innerHTML = `<span style="color:#f08c28">&#9632;</span> Psychrometric: ${psychroPct}% of readings &nbsp;·&nbsp; <span style="color:#888">&#9632;</span> Sensor fallback: ${100 - psychroPct}%`;
+                  else summaryEl.innerHTML = `<span style="color:#f08c28">&#9632;</span> Psychrometric: ${psychroPct}% of readings &nbsp;·&nbsp; <span style="color:#b8b8b8">&#9632;</span> Sensor fallback: ${100 - psychroPct}%`;
                 }
                 ktEmcPluginData.modeFlags = modeFlags;
                 ktEmcPluginData.timestamps = ts;
@@ -1420,13 +1456,13 @@
                 const summaryEl = document.getElementById('emc-mode-summary');
                 if (summaryEl) {
                     if (psychroCount === 0) {
-                        summaryEl.innerHTML = '<span style="color:#888">&#9632;</span> RH source: sensor only — no wet wick detected';
+                        summaryEl.innerHTML = '<span style="color:#b8b8b8">&#9632;</span> RH source: sensor only — no wet wick detected';
                     } else if (sensorCount === 0) {
                         summaryEl.innerHTML = '<span style="color:#f08c28">&#9632;</span> RH source: psychrometric (wet-bulb) — 100% of readings';
                     } else {
                         summaryEl.innerHTML =
                             `<span style="color:#f08c28">&#9632;</span> Psychrometric: ${psychroPct}% of readings` +
-                            ` &nbsp;·&nbsp; <span style="color:#888">&#9632;</span> Sensor fallback: ${100 - psychroPct}%`;
+                            ` &nbsp;·&nbsp; <span style="color:#b8b8b8">&#9632;</span> Sensor fallback: ${100 - psychroPct}%`;
                     }
                 }
                 ktEmcPluginData.modeFlags = modeFlags;
@@ -1853,8 +1889,7 @@
                         },
                         yDeg: {
                           position: 'right',
-                          min: 0,
-                          title: { display: true, text: '°C  (depression & dew margin)', font: FONT },
+                          title: { display: true, text: '°C', font: FONT },
                           grid: { drawOnChartArea: false },
                           ticks: { font: FONT },
                         },
@@ -2285,6 +2320,8 @@
               document.getElementById('sp-view').style.display  = tab === 'sp' ? '' : 'none';
               document.getElementById('tab-kt').classList.toggle('active', tab === 'kt');
               document.getElementById('tab-sp').classList.toggle('active', tab === 'sp');
+              document.getElementById('tab-kt').setAttribute('aria-selected', tab === 'kt');
+              document.getElementById('tab-sp').setAttribute('aria-selected', tab === 'sp');
               // Reload buttons: show only when on the matching tab AND content is already loaded
               const ktLoaded = document.getElementById('content').style.display !== 'none';
               const spLoaded = document.getElementById('sp-content').style.display !== 'none';
@@ -3042,7 +3079,7 @@
         </script>
         <div id="loading-overlay">
           <div class="spinner"></div>
-          <p id="loading-msg">Loading…</p>
+          <p id="loading-msg" role="status">Loading…</p>
         </div>
         <div id="drag-tab-hint" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#333;color:#aaa;padding:10px 20px;border-radius:8px;font-size:.85rem;pointer-events:none;display:none;z-index:200;white-space:nowrap;border:1px solid #444;"></div>
     </body>
