@@ -276,6 +276,9 @@
   </ul>
   <p>When Day or Night is selected, a pair of hour inputs appears so you can adjust the window boundaries. Hours are in UTC (Coordinated Universal Time — the international time standard used by the Kilntroller for all timestamps). The default daytime window is <strong>6:00–18:00 UTC</strong>. Adjust these to match your local day/night split.</p>
   <p>This filter is useful for comparing how the kiln performs during active (daytime) monitoring hours versus overnight.</p>
+  <blockquote>
+    <p><strong>Time Window and EMC thresholds:</strong> The Kilntroller logs separate fan control thresholds for daytime and nighttime operation (the active pair at each log time is recorded in the <code>EMC_on%</code> and <code>EMC_off%</code> CSV columns). When you filter to <strong>Day</strong>, the EMC chart threshold lines will show the day ON/OFF values; filter to <strong>Night</strong> and they show the night values. When viewing <strong>All</strong> hours the lines step between the two at dawn and dusk, which is the correct behaviour. At the very edges of the day window there may be a row or two where the firmware's solar-based day/night switch and the dashboard's hour-based filter disagree slightly — this is a cosmetic artefact only and does not affect the data.</p>
+  </blockquote>
 
   <hr>
 
@@ -297,7 +300,7 @@
         <tr><td><strong>Fan Activity</strong></td><td>Total fan runtime in hours, daily average, and percentage of time fans were running across the loaded dataset.</td></tr>
         <tr><td><strong>Readings</strong></td><td>Number of log entries and the date span covered. Click to open the date filter.</td></tr>
         <tr><td><strong>Time Window</strong></td><td>All / Day / Night toggle with adjustable hour boundaries (UTC).</td></tr>
-        <tr><td><strong>Battery</strong></td><td>Most recent battery voltage, estimated state of charge, and voltage range across the dataset.</td></tr>
+        <tr><td><strong>Battery</strong></td><td>Most recent battery voltage, estimated state of charge, and voltage range across the dataset. The state of charge percentage comes from the Renogy charge controller, which is calibrated for lead-acid batteries — if you are running a LiFePO4 battery, treat this figure as approximate only. Battery voltage is the reliable signal for LiFePO4 health.</td></tr>
         <tr><td><strong>Solar Panel</strong></td><td>Most recent solar panel voltage and current, and voltage range across the dataset.</td></tr>
       </tbody>
     </table>
@@ -313,8 +316,8 @@
   <ul>
     <li><strong>EMC %</strong> (solid orange) — the primary EMC reading, derived psychrometrically from the wet/dry-bulb temperature depression. The psychrometric method uses the Sprung equation to compute vapour pressure from the measured temperature difference, giving a physics-based relative humidity that is independent of the humidity sensor's drift.</li>
     <li><strong>Est. EMC</strong> (dashed blue/purple) — a secondary estimate derived from the dry-bulb sensor's direct relative humidity reading alone, without the wet wick. Less accurate but available as a fallback.</li>
-    <li><strong>Fans ON above this</strong> (dashed red) — the upper EMC threshold configured on the Kilntroller; fans turn on when EMC rises to or above this value.</li>
-    <li><strong>Fans OFF below this</strong> (dashed green) — the lower EMC threshold; fans turn off when EMC drops to or below this value.</li>
+    <li><strong>Fan ON threshold (day/night)</strong> (dashed red) — the upper EMC threshold configured on the Kilntroller; fans turn on when EMC rises to or above this value. The line shows the active day or night setpoint at each reading.</li>
+    <li><strong>Fan OFF threshold (day/night)</strong> (dashed green) — the lower EMC threshold; fans turn off when EMC drops to or below this value. The line shows the active day or night setpoint at each reading.</li>
     <li><strong>EMC trend</strong> (thin white dashed) — a linear regression trend line showing the overall direction of EMC across the displayed period.</li>
   </ul>
   <p>Background shading indicates fan controller state: <strong>orange</strong> = fans running (active drying), <strong>gray</strong> = fans off. A small note below the chart reports what percentage of readings used the psychrometric (wet-bulb) method versus the dry-bulb sensor fallback — if the wick dries out, this proportion drops and the estimate becomes less accurate.</p>
@@ -341,7 +344,10 @@
   <p>Month-by-month averages for kiln temperature, outside temperature, temperature difference, kiln relative humidity, outside relative humidity, humidity difference, and EMC. Always reflects the full dataset (not affected by the Readings date filter), but does follow the Time Window filter so you can compare monthly daytime vs. nighttime averages.</p>
 
   <h3>Battery &amp; Solar</h3>
-  <p>Battery voltage and solar panel voltage over time. Useful for confirming the power system is healthy across a long logging period.</p>
+  <p>Battery voltage, solar panel voltage, and estimated battery state of charge over time. Useful for confirming the power system is healthy across a long logging period.</p>
+  <blockquote>
+    <p><strong>LiFePO4 note:</strong> The state of charge (Charge %) line is derived from the Renogy charge controller, which uses a voltage-lookup table calibrated for lead-acid batteries. On a LiFePO4 pack the nearly flat voltage-SoC curve means even a small voltage sag under fan load can appear as a large SoC drop — this is a measurement artefact, not real depletion. Use the <strong>battery voltage</strong> line as the reliable health indicator: a healthy 12 V LiFePO4 pack stays between roughly 12.8 V and 13.4 V under normal operating conditions.</p>
+  </blockquote>
 
   <h3>Wick Health</h3>
   <p>Dedicated chart for monitoring wet-wick condition over time. The wet wick is a water-saturated fabric fitted to the wet-bulb sensor; its continuous evaporation is what produces the temperature depression that makes the psychrometric EMC calculation possible.</p>
