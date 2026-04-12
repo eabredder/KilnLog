@@ -68,6 +68,8 @@ When Day or Night is selected, a pair of hour inputs appears so you can adjust t
 
 This filter is useful for comparing how the kiln performs during active (daytime) monitoring hours versus overnight.
 
+> **Time Window and EMC thresholds:** The Kilntroller logs separate fan control thresholds for daytime and nighttime operation (the active pair at each log time is recorded in the `EMC_on%` and `EMC_off%` CSV columns). When you filter to **Day**, the EMC chart threshold lines will show the day ON/OFF values; filter to **Night** and they show the night values. When viewing **All** hours the lines step between the two at dawn and dusk, which is the correct behaviour. At the very edges of the day window there may be a row or two where the firmware's solar-based day/night switch and the dashboard's hour-based filter disagree slightly — this is a cosmetic artefact only and does not affect the data.
+
 ---
 
 ## Showing and Hiding Charts
@@ -86,7 +88,7 @@ A collapsible **Charts** bar sits between the filter cards and the chart area. C
 | **Fan Activity** | Total fan runtime in hours, daily average, and percentage of time fans were running across the loaded dataset. |
 | **Readings** | Number of log entries and the date span covered. Click to open the date filter. |
 | **Time Window** | All / Day / Night toggle with adjustable hour boundaries (UTC). |
-| **Battery** | Most recent battery voltage, estimated state of charge, and voltage range across the dataset. |
+| **Battery** | Most recent battery voltage, estimated state of charge, and voltage range across the dataset. The state of charge percentage comes from the Renogy charge controller, which is calibrated for lead-acid batteries — if you are running a LiFePO4 battery, treat this figure as approximate only. Battery voltage is the reliable signal for LiFePO4 health. |
 | **Solar Panel** | Most recent solar panel voltage and current, and voltage range across the dataset. |
 
 ---
@@ -135,7 +137,9 @@ Month-by-month averages for kiln temperature, outside temperature, temperature d
 
 ### Battery & Solar
 
-Battery voltage and solar panel voltage over time. Useful for confirming the power system is healthy across a long logging period.
+Battery voltage, solar panel voltage, and estimated battery state of charge over time. Useful for confirming the power system is healthy across a long logging period.
+
+> **LiFePO4 note:** The state of charge (Charge %) line is derived from the Renogy charge controller, which uses a voltage-lookup table calibrated for lead-acid batteries. On a LiFePO4 pack the nearly flat voltage-SoC curve means even a small voltage sag under fan load can appear as a large SoC drop — this is a measurement artefact, not real depletion. Use the **battery voltage** line as the reliable health indicator: a healthy 12 V LiFePO4 pack stays between roughly 12.8 V and 13.4 V under normal operating conditions.
 
 ### Wick Health
 
