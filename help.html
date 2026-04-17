@@ -211,6 +211,7 @@
       <li><a href="#loading-data">Loading Data</a></li>
       <li><a href="#filters">Filters</a></li>
       <li><a href="#showing-hiding">Showing &amp; Hiding Charts</a></li>
+      <li><a href="#temp-units">Temperature Units</a></li>
       <li><a href="#kt-cards">Kilntroller Cards</a></li>
       <li><a href="#kt-charts">Kilntroller Charts</a></li>
       <li><a href="#sp-cards">SensorPush Cards</a></li>
@@ -288,6 +289,21 @@
 
   <hr>
 
+  <!-- Temperature Units -->
+  <h2 id="temp-units">Temperature Units</h2>
+  <p>A <strong>°C / °F</strong> toggle appears in the top-right corner of the header once data is loaded in either tab. Clicking it switches all temperature values across both tabs simultaneously — no reload required.</p>
+  <p>The following are converted when you switch units:</p>
+  <ul>
+    <li>Temperature summary cards (dry-bulb, wet-bulb, outside, average kiln/outside)</li>
+    <li>All temperature chart axes and dataset labels</li>
+    <li>Temperature difference values — Kiln − Outside delta, temperature depression (dT), and dew margin — are converted as differences (multiplied by 9/5 without the offset), so they remain physically correct in either unit</li>
+    <li>Monthly Averages chart temperature axis</li>
+  </ul>
+  <p>Humidity (%), EMC (%), fan counts, and voltage values are not affected.</p>
+  <p>The toggle applies to both the Kilntroller and SensorPush tabs and resets to °C each time you reload the page.</p>
+
+  <hr>
+
   <!-- Kilntroller Cards -->
   <h2 id="kt-cards">Kilntroller View — Summary Cards</h2>
   <div class="table-wrap">
@@ -295,8 +311,8 @@
       <thead><tr><th>Card</th><th>What it shows</th></tr></thead>
       <tbody>
         <tr><td><strong>EMC</strong></td><td>Most recent Equilibrium Moisture Content (EMC) — the moisture level that wood will reach if left in the current air conditions indefinitely. Shows both the precise Wet-bulb reading (derived psychrometrically from the wet/dry-bulb temperature depression) and an Estimated reading (derived from the dry-bulb sensor's relative humidity alone). The sub-line shows the Kilntroller's active fan control thresholds as <code>OFF X.X / ON X.X %</code>.</td></tr>
-        <tr><td><strong>Temperature</strong></td><td>Most recent dry-bulb temperature (kiln air temperature), wet-bulb temperature (the cooled sensor with wet wick fitted), and outside air temperature, all in °C.</td></tr>
-        <tr><td><strong>Humidity</strong></td><td>Most recent kiln relative humidity (RH), outside RH, and the current wet-bulb temperature depression (dry-bulb minus wet-bulb, in °C).</td></tr>
+        <tr><td><strong>Temperature</strong></td><td>Most recent dry-bulb temperature (kiln air temperature), wet-bulb temperature (the cooled sensor with wet wick fitted), and outside air temperature. Unit follows the °C / °F toggle.</td></tr>
+        <tr><td><strong>Humidity</strong></td><td>Most recent kiln relative humidity (RH), outside RH, and the current wet-bulb temperature depression (dry-bulb minus wet-bulb). Depression value follows the °C / °F toggle.</td></tr>
         <tr><td><strong>Fan Activity</strong></td><td>Total fan runtime in hours, daily average, and percentage of time fans were running across the loaded dataset.</td></tr>
         <tr><td><strong>Readings</strong></td><td>Number of log entries and the date span covered. Click to open the date filter.</td></tr>
         <tr><td><strong>Time Window</strong></td><td>All / Day / Night toggle with adjustable hour boundaries (UTC).</td></tr>
@@ -360,10 +376,10 @@
     <li><strong>Failed threshold 70 %</strong> (dashed red) — wick-adjacent RH below this line in dry-air conditions means the Kilntroller has detected a failed wick and switched to sensor-only EMC automatically. Fan control continues uninterrupted.</li>
   </ul>
 
-  <span class="axis-label">Right axis — °C</span>
+  <span class="axis-label">Right axis — temperature difference (°C or °F, follows the unit toggle)</span>
   <ul>
-    <li><strong>Temperature depression dT</strong> (purple, filled) — the difference between the dry-bulb and wet-bulb temperatures. Evaporation from the wet wick cools the wet-bulb sensor below ambient air temperature; this gap is the primary input to the psychrometric calculation. A healthy, well-wetted wick typically shows <strong>4–8 °C</strong> at normal kiln operating temperatures. The dry-bulb sensor's anti-condensation heater adds a small upward bias to the absolute value — watch the trend, not the number.</li>
-    <li><strong>Dew margin °C</strong> (amber) — the difference between the current dry-bulb temperature and the dew point (the temperature at which the air would become fully saturated and condensation would form). A large dew margin indicates dry air where evaporation is most reliable. When this line drops toward zero the air is near-saturated and evaporation is physically suppressed regardless of wick condition.</li>
+    <li><strong>Temperature depression dT</strong> (purple, filled) — the difference between the dry-bulb and wet-bulb temperatures. Evaporation from the wet wick cools the wet-bulb sensor below ambient air temperature; this gap is the primary input to the psychrometric calculation. A healthy, well-wetted wick typically shows <strong>4–8 °C (7–14 °F)</strong> at normal kiln operating temperatures. The dry-bulb sensor's anti-condensation heater adds a small upward bias to the absolute value — watch the trend, not the number.</li>
+    <li><strong>Dew margin</strong> (amber) — the difference between the current dry-bulb temperature and the dew point (the temperature at which the air would become fully saturated and condensation would form). A large dew margin indicates dry air where evaporation is most reliable. When this line drops toward zero the air is near-saturated and evaporation is physically suppressed regardless of wick condition.</li>
     <li><strong>Zero reference</strong> (dashed red) — a baseline to make it easy to see when the depression has collapsed.</li>
   </ul>
 
@@ -388,7 +404,7 @@
       <thead><tr><th>Card</th><th>What it shows</th></tr></thead>
       <tbody>
         <tr><td><strong>Avg Est. EMC</strong></td><td>Average estimated Equilibrium Moisture Content for the kiln sensor (and outside sensor if loaded) across the filtered dataset. This is an approximation — see the note on the Estimated EMC chart below.</td></tr>
-        <tr><td><strong>Avg Temperature</strong></td><td>Average kiln and outside temperatures in °C across the filtered dataset.</td></tr>
+        <tr><td><strong>Avg Temperature</strong></td><td>Average kiln and outside temperatures across the filtered dataset. Unit follows the °C / °F toggle.</td></tr>
         <tr><td><strong>Avg Humidity</strong></td><td>Average kiln and outside relative humidity across the filtered dataset.</td></tr>
         <tr><td><strong>Readings</strong></td><td>Number of log entries and date span. Click to open the date filter.</td></tr>
         <tr><td><strong>Time Window</strong></td><td>All / Day / Night toggle with adjustable hour boundaries (UTC).</td></tr>
