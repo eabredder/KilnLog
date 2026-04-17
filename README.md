@@ -78,13 +78,28 @@ A collapsible **Charts** bar sits between the filter cards and the chart area. C
 
 ---
 
+## Temperature Units
+
+A **°C / °F** toggle appears in the top-right corner of the header once data is loaded in either tab. Switching it converts all temperature values across both tabs simultaneously:
+
+- All temperature cards (dry-bulb, wet-bulb, outside, average kiln/outside)
+- All temperature chart axes and dataset labels
+- Temperature difference and depression values (Kiln − Outside, dT, Dew margin)
+- Monthly Averages chart temperature axis
+
+Humidity (%), EMC (%), fan counts, and voltage values are not affected — those are not temperature measurements.
+
+The toggle applies to both the Kilntroller and SensorPush tabs. It resets to °C each time you reload the page.
+
+---
+
 ## Kilntroller View — Summary Cards
 
 | Card | What it shows |
 |---|---|
 | **EMC** | Most recent Equilibrium Moisture Content (EMC) — the moisture level that wood will reach if left in the current air conditions indefinitely. Shows both the precise Wet-bulb reading (derived psychrometrically from the wet/dry-bulb temperature depression) and an Estimated reading (derived from the dry-bulb sensor's relative humidity alone). The sub-line shows the Kilntroller's active fan control thresholds as `OFF X.X / ON X.X %`. |
-| **Temperature** | Most recent dry-bulb temperature (kiln air temperature), wet-bulb temperature (the cooled sensor with wet wick fitted), and outside air temperature, all in °C. |
-| **Humidity** | Most recent kiln relative humidity (RH), outside RH, and the current wet-bulb temperature depression (dry-bulb minus wet-bulb, in °C). |
+| **Temperature** | Most recent dry-bulb temperature (kiln air temperature), wet-bulb temperature (the cooled sensor with wet wick fitted), and outside air temperature. Unit follows the °C / °F toggle. |
+| **Humidity** | Most recent kiln relative humidity (RH), outside RH, and the current wet-bulb temperature depression (dry-bulb minus wet-bulb). Depression value follows the °C / °F toggle. |
 | **Fan Activity** | Total fan runtime in hours, daily average, and percentage of time fans were running across the loaded dataset. |
 | **Readings** | Number of log entries and the date span covered. Click to open the date filter. |
 | **Time Window** | All / Day / Night toggle with adjustable hour boundaries (UTC). |
@@ -153,10 +168,10 @@ The chart combines all three wick diagnostic signals in one view so you can dist
 - **Good threshold 88 %** (dashed green) — wick-adjacent RH above this line means the wick is healthy and the psychrometric measurement is trusted at full weight.
 - **Failed threshold 70 %** (dashed red) — wick-adjacent RH below this line in dry-air conditions means the Kilntroller has detected a failed wick and switched to sensor-only EMC automatically. Fan control continues uninterrupted.
 
-**Right axis — °C**
+**Right axis — temperature difference** (°C or °F, follows the unit toggle)
 
-- **Temperature depression dT** (purple, filled) — the difference between the dry-bulb and wet-bulb temperatures. Evaporation from the wet wick cools the wet-bulb sensor below ambient air temperature; this gap is the primary input to the psychrometric calculation. A healthy, well-wetted wick typically shows **4–8 °C** at normal kiln operating temperatures. The dry-bulb sensor's anti-condensation heater adds a small upward bias to the absolute value — watch the trend, not the number.
-- **Dew margin °C** (amber) — the difference between the current dry-bulb temperature and the dew point (the temperature at which the air would become fully saturated and condensation would form). A large dew margin indicates dry air where evaporation is most reliable. When this line drops toward zero the air is near-saturated and evaporation is physically suppressed regardless of wick condition.
+- **Temperature depression dT** (purple, filled) — the difference between the dry-bulb and wet-bulb temperatures. Evaporation from the wet wick cools the wet-bulb sensor below ambient air temperature; this gap is the primary input to the psychrometric calculation. A healthy, well-wetted wick typically shows **4–8 °C (7–14 °F)** at normal kiln operating temperatures. The dry-bulb sensor's anti-condensation heater adds a small upward bias to the absolute value — watch the trend, not the number.
+- **Dew margin** (amber) — the difference between the current dry-bulb temperature and the dew point (the temperature at which the air would become fully saturated and condensation would form). A large dew margin indicates dry air where evaporation is most reliable. When this line drops toward zero the air is near-saturated and evaporation is physically suppressed regardless of wick condition.
 - **Zero reference** (dashed red) — a baseline to make it easy to see when the depression has collapsed.
 
 **Reading the chart together:** if the depression collapses toward zero, check wick RH and dew margin to identify the cause:
@@ -175,7 +190,7 @@ A note below the chart counts any readings in the filtered dataset where the wic
 | Card | What it shows |
 |---|---|
 | **Avg Est. EMC** | Average estimated Equilibrium Moisture Content for the kiln sensor (and outside sensor if loaded) across the filtered dataset. This is an approximation — see the note on the Estimated EMC chart below. |
-| **Avg Temperature** | Average kiln and outside temperatures in °C across the filtered dataset. |
+| **Avg Temperature** | Average kiln and outside temperatures across the filtered dataset. Unit follows the °C / °F toggle. |
 | **Avg Humidity** | Average kiln and outside relative humidity across the filtered dataset. |
 | **Readings** | Number of log entries and date span. Click to open the date filter. |
 | **Time Window** | All / Day / Night toggle with adjustable hour boundaries (UTC). |
